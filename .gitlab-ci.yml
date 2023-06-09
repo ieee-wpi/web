@@ -1,0 +1,12 @@
+stages:          # List of stages for jobs, and their order of execution
+  - deploy
+
+
+deploy-job:      # This job runs in the deploy stage.
+  stage: deploy
+  environment: production
+  tags: [student]
+  script:
+    - echo "Triggering git pull..."
+    - curl "http://arcwww03.wpi.edu:8080/ieee.wpi.edu"
+
