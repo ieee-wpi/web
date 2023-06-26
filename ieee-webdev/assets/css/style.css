@@ -1846,10 +1846,12 @@ section {
   text-decoration: none;
 }
 
-#footer .copyright {
-  text-align: center;
-  float: left;
+
+#footer .copyright-info {
+  margin-top: 30px;
 }
+
+
 
 #footer .credits {
   float: right;

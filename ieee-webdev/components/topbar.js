@@ -30,6 +30,7 @@ class Header extends HTMLElement {
                     <a href="#" class="twitter"><i class="bi bi-twitter" ,></i></a>
                     <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-github"></i></a>
                 </div>
             </div>
         </header>
@@ -44,14 +45,14 @@ class Header extends HTMLElement {
                 <li><a class="nav-link scrollto active" href="#welcome">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="pages/exec.html">Officer Board</a></li>
+                <li><a class="nav-link scrollto" href="pages/networking.html">Networking Opportunities</a></li>
                 <li class="dropdown"><a href="#services"><span>Events</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                     <!-- TODO: add events pages-->
                     <li><a href="/events/paintball.html">Paint Ball</a></li>
-                    <li><a href="#">Soldering Workshop</a></li>
-                    <li><a href="#">Spark Party</a></li>
-                    <li><a href="#">Fox Hunt</a></li>
-
+                    <li><a href="/events/paintball.html">Soldering Workshop</a></li>
+                    <li><a href="/events/paintball.html">Spark Party</a></li>
+                    <li><a href="/events/paintball.html">Fox Hunt</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="#team">Team</a></li>
