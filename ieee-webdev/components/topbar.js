@@ -17,7 +17,7 @@ class Header extends HTMLElement {
         <header id="topbar" class="d-flex align-items-center">
             <div class="container d-flex justify-content-center justify-content-md-between">
                 <div class="d-flex align-items-center">
-                    <h1 class="logo"><img src="../assets/img/WPI.png" alt="" />
+                    <a href="https://www.wpi.edu" class="logo"> <img src="assets/img/WPI.png" alt="WPI Logo"></a>
                 </div>
 
                 <div class="contact-info d-flex align-items-center">
@@ -38,8 +38,7 @@ class Header extends HTMLElement {
         <!-- ======= Header ======= -->
         <header id="header" class="d-flex align-items-center">
             <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><img src="assets/img/IEEE.png" alt="IEEE Club Logo">
-                <a href="https://www.ieee.org/"></a></h1>
+            <a href="index.html" class="logo"><img src="assets/img/IEEE.png" alt="IEEE Club Logo"></a>
             <nav id="navbar" class="navbar">
                 <ul>
                 <li><a class="nav-link scrollto active" href="#welcome">Home</a></li>
@@ -55,7 +54,6 @@ class Header extends HTMLElement {
                     <li><a href="/events/paintball.html">Fox Hunt</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#team">Team</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

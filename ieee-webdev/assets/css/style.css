@@ -656,13 +656,13 @@ section {
   border-radius: 50px;
 }
 
-.section-title h3 {
+.section-title h1 {
   margin: 15px 0 0 0;
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 50px;
+  font-weight: 1000;
 }
 
-.section-title h3 span {
+.section-title h1 span {
   color: #f68121;
 }
 
@@ -767,14 +767,11 @@ section {
 }
 
 .featured-services .icon {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .featured-services .icon i {
-  font-size: 48px;
-  line-height: 1;
-  color: #f68121;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .featured-services .title {
@@ -782,6 +779,13 @@ section {
   margin-bottom: 15px;
   font-size: 18px;
 }
+
+.featured-services .goal {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 40px;
+}
+
 
 .featured-services .title a {
   color: #111;
@@ -958,9 +962,9 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Services
+# Goals
 --------------------------------------------------------------*/
-.services .icon-box {
+.goals .icon-box {
   text-align: center;
   border: 1px solid #e2eefd;
   padding: 80px 20px;
@@ -968,7 +972,7 @@ section {
   background: #fff;
 }
 
-.services .icon-box .icon {
+.goals .icon-box .icon {
   margin: 0 auto;
   width: 64px;
   height: 64px;
@@ -982,40 +986,40 @@ section {
   transition: ease-in-out 0.3s;
 }
 
-.services .icon-box .icon i {
+.goals .icon-box .icon i {
   color: #3b8af2;
   font-size: 28px;
   transition: ease-in-out 0.3s;
 }
 
-.services .icon-box h4 {
+.goals .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.services .icon-box h4 a {
+.goals .icon-box h4 a {
   color: #222222;
   transition: ease-in-out 0.3s;
 }
 
-.services .icon-box p {
+.goals .icon-box p {
   line-height: 24px;
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 0;
 }
 
-.services .icon-box:hover {
+.goals .icon-box:hover {
   border-color: #fff;
   box-shadow: 0px 0 25px 0 rgba(16, 110, 234, 0.1);
 }
 
-.services .icon-box:hover h4 a,
-.services .icon-box:hover .icon i {
+.goals .icon-box:hover h4 a,
+.goals .icon-box:hover .icon i {
   color: #106eea;
 }
 
-.services .icon-box:hover .icon {
+.goals .icon-box:hover .icon {
   border-color: #106eea;
 }
 
