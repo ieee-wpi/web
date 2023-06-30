@@ -530,7 +530,8 @@ h6 {
 }
 
 #welcome h1 span {
-  color: #a00fc4;
+  color: #961fb4;
+  font-family: "Poppins", sans-serif;
 }
 
 #welcome h2 {
@@ -733,10 +734,10 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Featured Services
+# Events
 --------------------------------------------------------------*/
 
-.featured-services .icon-box {
+.events .icon-box {
   padding: 30px;
   position: relative;
   overflow: hidden;
@@ -748,7 +749,7 @@ section {
   z-index: 1;
 }
 
-.featured-services .icon-box::before {
+.events .icon-box::before {
   content: "";
   position: absolute;
   background: #cbe0fb;
@@ -760,51 +761,61 @@ section {
   z-index: -1;
 }
 
-.featured-services .icon-box:hover::before {
+.events .icon-box:hover::before {
   background: #106eea;
   top: 0;
   border-radius: 0px;
 }
 
-.featured-services .icon {
+.events .icon {
   margin-bottom: 10px;
 }
 
-.featured-services .icon i {
+.events .icon i {
   transition: all 0.1s ease-in-out;
 }
 
-.featured-services .title {
+.events .title {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
 
-.featured-services .goal {
+.events .goal {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 40px;
 }
 
 
-.featured-services .title a {
+.events .title a {
   color: #111;
 }
 
-.featured-services .description {
+.events .description {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
 }
 
-.featured-services .icon-box:hover .title a,
-.featured-services .icon-box:hover .description {
+.events .icon-box:hover .title a,
+.events .icon-box:hover .description {
   color: #fff;
 }
 
-.featured-services .icon-box:hover .icon i {
+.events .icon-box:hover .icon i {
   color: #fff;
 }
+
+/*--------------------------------------------------------------
+# Exec
+--------------------------------------------------------------*/
+
+.prev-exec .container button {
+  border: none;
+  background-color: none;
+}
+
 
 /*--------------------------------------------------------------
 # About
@@ -964,15 +975,15 @@ section {
 /*--------------------------------------------------------------
 # Goals
 --------------------------------------------------------------*/
-.goals .icon-box {
+.columns .icon-box {
   text-align: center;
   border: 1px solid #e2eefd;
-  padding: 80px 20px;
+  padding: 30px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }
 
-.goals .icon-box .icon {
+.columns .icon-box .icon {
   margin: 0 auto;
   width: 64px;
   height: 64px;
@@ -986,42 +997,51 @@ section {
   transition: ease-in-out 0.3s;
 }
 
-.goals .icon-box .icon i {
+.columns .icon-box .icon i {
   color: #3b8af2;
   font-size: 28px;
   transition: ease-in-out 0.3s;
 }
 
-.goals .icon-box h4 {
+.columns .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.goals .icon-box h4 a {
+.columns .icon-box h4 a {
   color: #222222;
   transition: ease-in-out 0.3s;
 }
 
-.goals .icon-box p {
+.columns .icon-box p {
   line-height: 24px;
   font-size: 18px;
   margin-bottom: 0;
 }
 
-.goals .icon-box:hover {
+.columns .icon-box p {
+  line-height: 24px;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+
+.columns .icon-box:hover {
   border-color: #fff;
   box-shadow: 0px 0 25px 0 rgba(16, 110, 234, 0.1);
 }
 
-.goals .icon-box:hover h4 a,
-.goals .icon-box:hover .icon i {
+.columns .icon-box:hover h4 a,
+.columns .icon-box:hover .icon i {
   color: #106eea;
 }
 
-.goals .icon-box:hover .icon {
+.columns .icon-box:hover .icon {
   border-color: #106eea;
 }
+
+
 
 /*--------------------------------------------------------------
 # Testimonials

@@ -14,6 +14,13 @@ class Header extends HTMLElement {
         <!-- Template Main CSS File -->
         <link href="../assets/css/style.css" rel="stylesheet">
 
+        <script>
+            $(".nav-item a").on("click", function() {
+                $(this).removeClass("active");
+                $(".nav-item a").addClass("active");
+            });
+        </script>
+
         <header id="topbar" class="d-flex align-items-center">
             <div class="container d-flex justify-content-center justify-content-md-between">
                 <div class="d-flex align-items-center">
@@ -32,32 +39,6 @@ class Header extends HTMLElement {
                     <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
                     <a href="#" class="instagram"><i class="bx bxl-github"></i></a>
                 </div>
-            </div>
-        </header>
-
-        <!-- ======= Header ======= -->
-        <header id="header" class="d-flex align-items-center">
-            <div class="container d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo"><img src="assets/img/IEEE.png" alt="IEEE Club Logo"></a>
-            <nav id="navbar" class="navbar">
-                <ul>
-                <li><a class="nav-link scrollto active" href="#welcome">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="pages/exec.html">Officer Board</a></li>
-                <li><a class="nav-link scrollto" href="pages/networking.html">Networking Opportunities</a></li>
-                <li class="dropdown"><a href="#services"><span>Events</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                    <!-- TODO: add events pages-->
-                    <li><a href="/events/paintball.html">Paint Ball</a></li>
-                    <li><a href="/events/paintball.html">Soldering Workshop</a></li>
-                    <li><a href="/events/paintball.html">Spark Party</a></li>
-                    <li><a href="/events/paintball.html">Fox Hunt</a></li>
-                    </ul>
-                </li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
             </div>
         </header>
     `
