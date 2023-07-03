@@ -1041,6 +1041,14 @@ section {
   border-color: #106eea;
 }
 
+.columns .icon-box .networking p {
+  line-height: 40px;
+  text-align: left;
+}
+
+.columns .icon-box .networking p span {
+  color: #f68121;
+}
 
 
 /*--------------------------------------------------------------
