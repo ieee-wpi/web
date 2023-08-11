@@ -37,7 +37,7 @@ class Header extends HTMLElement {
                     <a href="#" class="twitter"><i class="bi bi-twitter" ,></i></a>
                     <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-                    <a href="#" class="instagram"><i class="bx bxl-github"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-github"></i></a>
                 </div>
             </div>
         </header>
