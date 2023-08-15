@@ -55,8 +55,8 @@ class Footer extends HTMLElement {
                 <!--TODO: Add link-->
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-github"></i></a>
+                <a href="https://www.instagram.com/ieeewpi/?igshid=MzRlODBiNWFlZA%3D%3D" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://github.com/IEEE-WPI" class="github"><i class="bx bxl-github"></i></a>
               </div>
             </div>
   

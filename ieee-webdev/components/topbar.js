@@ -35,9 +35,9 @@ class Header extends HTMLElement {
                 <div class="social-links d-none d-md-flex align-items-center">
                     <!-- TODO: add social media link-->
                     <a href="#" class="twitter"><i class="bi bi-twitter" ,></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/ieeewpi/?igshid=MzRlODBiNWFlZA%3D%3D" class="instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/IEEE-WPI" class="instagram"><i class="bi bi-github"></i></a>
                 </div>
             </div>
         </header>
