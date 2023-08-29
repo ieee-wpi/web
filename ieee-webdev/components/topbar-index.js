@@ -29,7 +29,7 @@ class Header extends HTMLElement {
 
                 <div class="contact-info d-flex align-items-center">
                     <i class="bi bi-envelope d-flex align-items-center"><a
-                            href="ieee-officers@wpi.edu">ieee-officers@wpi.edu</a></i>
+                            href="ieee-exec@wpi.edu">ieee-exec@wpi.edu</a></i>
                 </div>
 
                 <div class="social-links d-none d-md-flex align-items-center">

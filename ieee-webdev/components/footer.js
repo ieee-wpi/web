@@ -24,7 +24,7 @@ class Footer extends HTMLElement {
                 100 Institute Road<br>
                 Worcester, MA 01609<br><br>
   
-                <strong>Email: </strong>ieee-officers@wpi.edu<br>
+                <strong>Email: </strong>ieee-exec@wpi.edu<br>
               </p>
             </div>
   
