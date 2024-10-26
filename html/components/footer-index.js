@@ -33,7 +33,7 @@ class Footer extends HTMLElement {
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="http://www.ieee.org/index.html">IEEE.org</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="http://www.ieee.org/membership_services/membership/students/index.html">IEEE Students</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="http://users.rcn.com/ieeeworc/">Worcester Section</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://site.ieee.org/worcester/">Worcester Section</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="http://www.ieee.org/sitemap.html">More Sites</a></li>
               </ul>
             </div>
