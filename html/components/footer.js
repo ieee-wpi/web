@@ -52,7 +52,7 @@ class Footer extends HTMLElement {
               <h4>Our Social Networks</h4>
               <p>Follow us on these social media <br> platforms to get the most recent <br> updates!</p>
               <div class="social-links mt-3">
-              <a href="https://discord.gg/hqDSAUuw" class = "discord"><i class = bx bxl-discord"></i></a>
+              <a href="https://discord.gg/NDxvWKhyeU" class = "discord"><i class = bx bxl-discord"></i></a>
               <a href="https://www.instagram.com/ieeewpi/?igshid=MzRlODBiNWFlZA%3D%3D" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="https://github.com/IEEE-WPI" class="github"><i class="bx bxl-github"></i></a>
               </div>
