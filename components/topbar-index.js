@@ -29,13 +29,13 @@ class Header extends HTMLElement {
 
                 <div class="contact-info d-flex align-items-center">
                     <i class="bi bi-envelope d-flex align-items-center"><a
-                            href="ieee-exec@wpi.edu">ieee-exec@wpi.edu</a></i>
+                            href="mailto:ieee-exec@wpi.edu">ieee-exec@wpi.edu</a></i>
                 </div>
 
                 <div class="social-links d-none d-md-flex align-items-center">
-                    <!-- TODO: add social media link-->
+                     <a href="https://discord.gg/NDxvWKhyeU" class = "discord"><i class = "bx bxl-discord""></i></a>
                     <a href="https://www.instagram.com/ieeewpi/?igshid=MzRlODBiNWFlZA%3D%3D" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+                    <a href="https://www.linkedin.com/groups/14328043/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
                     <a href="https://github.com/IEEE-WPI" class="instagram"><i class="bi bi-github"></i></a>
                 </div>
             </div>
