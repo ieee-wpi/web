@@ -65,7 +65,7 @@ class Footer extends HTMLElement {
   
       <div class="copyright-info d-flex justify-content-sm-center">
         <div class=" p-2">
-          &copy; 2024 <strong><span>   WPI IEEE Club  </span></strong> - All Rights Reserved
+          &copy; Copyright   <strong><span>   WPI IEEE Club  </span></strong> - All Rights Reserved
         </div>
         <div class=" p-2">
             <p class="align-items-center">
