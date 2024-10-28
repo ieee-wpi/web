@@ -2,20 +2,6 @@
 <html lang="en">
 
 <head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HEHBT8FQK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'G-9HEHBT8FQK');
-  </script>
-
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="theme-color" content="#af8322" />
@@ -61,7 +47,6 @@
 <body>
 
   <top-bar></top-bar>
-  
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
       <div class="container d-flex align-items-center justify-content-between">
@@ -77,7 +62,7 @@
               <li><a href="pcb-design-a24.html">PCB Design Class</a></li>
               <li><a href="spark-party.html">Spark Party</a></li>
               <li><a href="soldering-workshop.html">Soldering Workshop</a></li>
-              <li><a href = "tesla-coils-quad.html"> Tesla Coils on the Quad</a></li>
+              <li><a href ="tesla-coils-quad.html"> Tesla Coils on the Quad</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#footer">Contact</a></li>
@@ -94,21 +79,21 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h1>Spark Party</h1>
-          <p>More details on the event will be posted soon!</p>
+          <h1><span>PCB Design </span>Class</h1>
+          <p>This A-Term, we held a PCB Design Class where we taught students the essentials of PCB Design</p>
           <p>Please join our <a style="background-color: #f68121;" href="https://forms.gle/DpxC8XqAjSTKo8UL7">email list</a> if you have not already done so and would like to receive updates via email!</p>
-          <p>Please join our <a style="background-color: #f68121;" href="https://discord.gg/NDxvWKhyeU">discord</a> if you have not already done so and would like to communicate with us!</p>
+          <p>Please join our <a style="background-color: #f68121;" href="https://discord.gg/NDxvWKhyeU">discord</a> if you have not already done so and would like to communicate with us!</p>          
         </div>
 
         <!-- TODO: Add flyer when events are scheduled
-          <div id="flyer" class="flyer">
-            <img src="../images/event-flyers/Flyer.jpg">
-          </div>
-        -->
-
-      </div>
-
+        <div id="flyer" class="flyer">
+          <img src="../images/event-flyers/FallBBQ2023A.jpg">
+        </div> -->
+        
+        
     </section>
+
+
 
     </main><!-- End #main -->
 
@@ -132,21 +117,6 @@
     <!-- jQuery -->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
 
-    <script>
-        jQuery('#contact-form').on('submit', function (e) {
-            e.preventDefault();
-            jQuery.ajax({
-                url: 'https://script.google.com/macros/s/AKfycbwfsQAhOrNPYSwPZqciPuYrMUfn48cBsN20TSjtLwGaRjoNcZ_JLrkzR82v0KD30ILH/exec',
-                type: 'post',
-                data: jQuery('#contact-form').serialize(),
-                success: function (result) {
-                    jQuery('#contact-form')[0].reset();
-                    jQuery('#sent-message').html('Your message has been sent. Thank you!');
-
-                }
-            })
-        })
-    </script>
 
 </body>
 

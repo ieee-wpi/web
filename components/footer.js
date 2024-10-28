@@ -5,12 +5,12 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `  
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
@@ -32,7 +32,7 @@ class Footer extends HTMLElement {
               <h4>IEEE Resources</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="http://www.ieee.org/index.html">IEEE.org</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="https://www.ieee.org/membership/join/index.html">IEEE Student Membership Sign Up </a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.ieee.org/membership/join/index.html">IEEE Student Membership Sign Up</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="https://site.ieee.org/worcester/">Worcester Section</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="http://www.ieee.org/sitemap.html">More Sites</a></li>
               </ul>
@@ -52,9 +52,10 @@ class Footer extends HTMLElement {
               <h4>Our Social Networks</h4>
               <p>Follow us on these social media <br> platforms to get the most recent <br> updates!</p>
               <div class="social-links mt-3">
-                <a href="https://discord.gg/NDxvWKhyeU" class = "discord"><i class = bx bxl-discord"></i></a>
-                <a href="https://www.instagram.com/ieeewpi/?igshid=MzRlODBiNWFlZA%3D%3D" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="https://github.com/IEEE-WPI" class="github"><i class="bx bxl-github"></i></a>
+              <a href="https://discord.gg/NDxvWKhyeU" class = "discord"> <i class="bx bxl-discord"></i></a>
+              <a href="https://www.instagram.com/ieeewpi/?igshid=MzRlODBiNWFlZA%3D%3D" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.linkedin.com/groups/14328043/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+              <a href="https://github.com/IEEE-WPI" class="github"><i class="bx bxl-github"></i></a>
               </div>
             </div>
   
@@ -64,7 +65,7 @@ class Footer extends HTMLElement {
   
       <div class="copyright-info d-flex justify-content-sm-center">
         <div class=" p-2">
-          &copy; Copyright   <strong><span>   WPI IEEE Club  </span></strong> - All Rights Reserved
+          &copy; 2024 <strong><span>   WPI IEEE Club  </span></strong> - All Rights Reserved
         </div>
         <div class=" p-2">
             <p class="align-items-center">
@@ -75,9 +76,9 @@ class Footer extends HTMLElement {
         </div>
       </div>
       
-    </footer><!-- End Footer -->
+    </footer>
     `
   }
 }
 
-customElements.define('footer-info-index', Footer);
+customElements.define('footer-info', Footer);
