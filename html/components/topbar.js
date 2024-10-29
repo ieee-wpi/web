@@ -24,7 +24,7 @@ class Header extends HTMLElement {
         <header id="topbar" class="d-flex align-items-center">
             <div class="container d-flex justify-content-center justify-content-md-between">
                 <div class="d-flex align-items-center">
-                    <a href="https://www.wpi.edu" class="logo"> <img src="../assets/img/WPI.png" alt="WPI Logo"></a>
+                    <a href="https://www.wpi.edu" class="logo"> <img src="../assets/img/wpi.png" alt="WPI Logo"></a>
                 </div>
 
                 <div class="contact-info d-flex align-items-center">
