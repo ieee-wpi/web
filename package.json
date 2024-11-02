@@ -1,0 +1,14 @@
+{
+  "name": "ieee.wpi.edu",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dgorbunov",
+  "license": "ISC",
+  "dependencies": {
+    "htmx.org": "^2.0.3"
+  }
+}
