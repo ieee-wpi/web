@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - IEEE WPI Student Branch</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet if applicable -->
+    <style>
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header.navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .navbar-brand a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar-links a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-events {
+            background-image: url('assets/img/heroes/events_hero.png');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-events h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .upcoming-events {
+            padding: 40px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .upcoming-events h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .calendar-placeholder {
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .flagship-events {
+            padding: 40px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .flagship-events h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .event-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .event-card {
+            width: 200px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .event-card h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .event-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="navbar-brand"><a href="index.html"><strong>IEEE</strong> WPI Student Branch</a></div>
+    <div class="navbar-links">
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="people.html">People</a>
+        <a href="https://mywpi.wpi.edu/IEEE/club_signup" target="_blank">Join</a>
+    </div>
+</header>
+
+<section class="hero-events">
+    <h1>Events</h1>
+</section>
+
+<section class="upcoming-events">
+    <h2>Upcoming Events</h2>
+    <p>We typically hold weekly events, usually with free food, during the school year. We also have several annual flagship events that we run.</p>
+    <div class="calendar-placeholder">
+        Calendar UI component. One option: <a href="https://demo.mobiscroll.com/react/eventcalendar" target="_blank">https://demo.mobiscroll.com/react/eventcalendar</a>
+    </div>
+</section>
+
+<section class="flagship-events">
+    <h2>Flagship Events</h2>
+    <div class="event-cards">
+
+        <div class="event-card">
+            <img src="path-to-pcb-design-image.jpg" alt="PCB Design Class"> <!-- Replace with actual image path -->
+            <h3>PCB Design Class</h3>
+            <p>September</p>
+        </div>
+
+        <div class="event-card">
+            <img src="path-to-spark-party-image.jpg" alt="Spark Party"> <!-- Replace with actual image path -->
+            <h3>Spark Party</h3>
+            <p>December</p>
+        </div>
+
+        <div class="event-card">
+            <img src="path-to-networking-night-image.jpg" alt="Networking Night"> <!-- Replace with actual image path -->
+            <h3>Networking Night</h3>
+            <p>January</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

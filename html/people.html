@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People - IEEE WPI Student Branch</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet if applicable -->
+  <style>
+    /* Basic styling */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    /* Header */
+    header.navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+    .navbar-brand a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section for People */
+    .hero-people {
+      background-image: url('assets/img/heroes/people_hero.png'); /* Replace with actual image path */
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-people h1 {
+      font-size: 3em;
+      margin: 0;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .officer-board {
+      padding: 40px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .officer-board img {
+      width: 60%;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .officer-board p {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .current-officers {
+      padding: 40px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .current-officers h2 {
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .officer-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .officer-card {
+      width: 120px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .officer-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 8px;
+    }
+
+    .officer-card h3 {
+      font-size: 1em;
+      color: #333;
+      margin: 5px 0;
+    }
+
+    .officer-card p {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .archive-section {
+      padding: 40px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .archive-section h2 {
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .archive-section p {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="navbar-brand"><a href="index.html"><strong>IEEE</strong> WPI Student Branch</a></div>
+  <div class="navbar-links">
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="people.html">People</a>
+    <a href="https://mywpi.wpi.edu/IEEE/club_signup" target="_blank">Join</a>
+  </div>
+</header>
+
+<section class="hero-people">
+  <h1>People</h1>
+</section>
+
+<section class="officer-board">
+  <img src="assets/img/officer_board.png" alt="2024-2025 Officer Board">
+  <p>2024-2025 Officer Board</p>
+</section>
+
+<section class="current-officers">
+  <h2>Current Officers</h2>
+  <div class="officer-cards">
+
+    <div class="officer-card">
+      <img src="assets/img/bob.png" alt="Bob Builder">
+      <h3>Bob Builder</h3>
+      <p>Position | '99</p>
+    </div>
+
+    <div class="officer-card">
+      <img src="assets/img/bob.png" alt="Bob Builder">
+      <h3>Bob Builder</h3>
+      <p>Position | '99</p>
+    </div>
+    <div class="officer-card">
+      <img src="assets/img/bob.png" alt="Bob Builder">
+      <h3>Bob Builder</h3>
+      <p>Position | '99</p>
+    </div>
+    <div class="officer-card">
+      <img src="assets/img/bob.png" alt="Bob Builder">
+      <h3>Bob Builder</h3>
+      <p>Position | '99</p>
+    </div>
+    <div class="officer-card">
+      <img src="assets/img/bob.png" alt="Bob Builder">
+      <h3>Bob Builder</h3>
+      <p>Position | '99</p>
+    </div>
+  </div>
+</section>
+
+<section class="archive-section">
+  <h2>Archive of Officers</h2>
+  <p>TODO: Cards for old officer boards</p>
+</section>
+
+</body>
+</html>

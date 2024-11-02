@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - IEEE WPI Student Branch</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header.navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .navbar-brand a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar-links a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-about {
+            background-image: url('assets/img/heroes/about_hero.png');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-about h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-section {
+            padding: 40px;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .content-section p {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .content-section a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .content-section a:hover {
+            color: #0056b3;
+        }
+
+        .bylaws-section {
+            padding: 40px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .bylaws-section h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .pdf-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 500px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="navbar-brand"><a href="index.html"><strong>IEEE</strong> WPI Student Branch</a></div>
+    <div class="navbar-links">
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="people.html">People</a>
+        <a href="https://mywpi.wpi.edu/IEEE/club_signup" target="_blank">Join</a>
+    </div>
+</header>
+
+<section class="hero-about">
+    <h1>About</h1>
+</section>
+
+<section class="content-section">
+    <p>
+        IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.
+        IEEE and its members inspire a global community through its highly cited publications, conferences, technology standards, and professional and educational activities.
+    </p>
+    <p>
+        Our student branch is focused on organizing engaging technical, professional, and social events for the WPI community, primarily for electronics and computing-related majors.
+        Our members are passionate about technology and focused on cultivating an enriching student life for the WPI electronics and computing community.
+        We typically host weekly events, usually with free food, during the school year.
+    </p>
+    <p>
+        We have a student lounge in the Atwater Kent building, with a microwave, fridge, coffee machine, and printer. We have a variety of project materials also in the lounge.
+    </p>
+    <p>
+        Have a question or want to reach out? Send us an email at <a href="mailto:gr-ieee-exec@wpi.edu">gr-ieee-exec@wpi.edu</a>
+    </p>
+</section>
+
+<section class="bylaws-section">
+    <h2>Bylaws</h2>
+    <div class="pdf-container">
+        <embed src="assets/pdfs/problem.pdf" type="application/pdf" width="100%" height="100%" />
+    </div>
+</section>
+
+</body>
+</html>

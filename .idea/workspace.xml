@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0d01f33-a9e7-4993-883b-30915e5fa8e3" name="Changes" comment="" />
+    <list default="true" id="a0d01f33-a9e7-4993-883b-30915e5fa8e3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +34,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.header.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
     "JavaScript Debug.networking.html.executor": "Run",
     "JavaScript Debug.pcb-design-a24.html.executor": "Run",
     "Node.js.topbar-index.js.executor": "Run",
@@ -46,6 +51,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ieee.wpi.edu3\html\assets\img\logos" />
+      <recent name="D:\ieee.wpi.edu3\html\assets\img\heroes" />
+      <recent name="D:\ieee.wpi.edu3\html\assets\img" />
       <recent name="D:\ieee.wpi.edu3\html" />
     </key>
   </component>
@@ -67,7 +75,8 @@
       <workItem from="1730155123581" duration="750000" />
       <workItem from="1730156372742" duration="2708000" />
       <workItem from="1730160570343" duration="625000" />
-      <workItem from="1730211242387" duration="618000" />
+      <workItem from="1730211242387" duration="5564000" />
+      <workItem from="1730586324176" duration="5216000" />
     </task>
     <servers />
   </component>
