@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a0d01f33-a9e7-4993-883b-30915e5fa8e3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/events.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/people.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/people.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +37,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.events.html.executor": "Run",
     "JavaScript Debug.header.html.executor": "Run",
     "JavaScript Debug.index.html.executor": "Run",
     "JavaScript Debug.networking.html.executor": "Run",
@@ -76,7 +80,7 @@
       <workItem from="1730156372742" duration="2708000" />
       <workItem from="1730160570343" duration="625000" />
       <workItem from="1730211242387" duration="5564000" />
-      <workItem from="1730586324176" duration="5216000" />
+      <workItem from="1730586324176" duration="8910000" />
     </task>
     <servers />
   </component>

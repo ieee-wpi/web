@@ -78,12 +78,40 @@
       width: 25px;
       margin: 0 10px;
     }
+
+
+    .navbar-brand a {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .navbar-logo {
+      height: 1em; /* Matches the font size for alignment */
+      margin-right: 8px; /* Adjust space between logo and text */
+      vertical-align: middle;
+    }
+
+    .navbar-brand span {
+      color: #fff;
+      line-height: 1; /* Keeps text vertically centered */
+    }
+
   </style>
 </head>
 <body>
 
 <header class="navbar">
-  <div class="navbar-brand"><a href="index.html"><strong>IEEE</strong> WPI Student Branch</a></div>
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="assets/img/logos/ieee_white.png" alt="IEEE Logo" class="navbar-logo" />
+      <span>WPI Student Branch</span>
+    </a>
+  </div>
+
   <div class="navbar-links">
     <a href="about.html">About</a>
     <a href="events.html">Events</a>

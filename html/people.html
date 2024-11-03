@@ -153,12 +153,51 @@
     .archive-section p {
       color: #666;
     }
+
+    .contact-icons img {
+      width: 25px;
+      margin: 0 10px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+
+    .navbar-brand a {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .navbar-logo {
+      height: 1em; /* Matches the font size for alignment */
+      margin-right: 8px; /* Adjust space between logo and text */
+      vertical-align: middle;
+    }
+
+    .navbar-brand span {
+      color: #fff;
+      line-height: 1; /* Keeps text vertically centered */
+    }
   </style>
 </head>
 <body>
 
 <header class="navbar">
-  <div class="navbar-brand"><a href="index.html"><strong>IEEE</strong> WPI Student Branch</a></div>
+  <div class="navbar-brand">
+    <a href="index.html">
+      <img src="assets/img/logos/ieee_white.png" alt="IEEE Logo" class="navbar-logo" />
+      <span>WPI Student Branch</span>
+    </a>
+  </div>
+
   <div class="navbar-links">
     <a href="about.html">About</a>
     <a href="events.html">Events</a>
@@ -213,6 +252,16 @@
   <h2>Archive of Officers</h2>
   <p>TODO: Cards for old officer boards</p>
 </section>
-
+<footer>
+  <p>Get in Touch!</p>
+  <address>100 Institute Rd, Worcester, MA 01609</address>
+  <div class="contact-icons">
+    <a href="https://discord.gg/NDxvWKhyeU"><img src="assets/img/logos/discord.png" alt="Discord"></a>
+    <a href="https://www.facebook.com/IEEEWPI"><img src="assets/img/logos/fb.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/ieeewpi/"><img src="assets/img/logos/ig.png" alt="Instagram"></a>
+    <a href="https://www.linkedin.com/groups/14328043/"><img src="assets/img/logos/li.png" alt="LinkedIn"></a>
+    <a href="mailto:ieee-officers@wpi.edu"><img src="assets/img/logos/email.png" alt="Email"></a>
+  </div>
+</footer>
 </body>
 </html>

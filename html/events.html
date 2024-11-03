@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - IEEE WPI Student Branch</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet if applicable -->
-    <style>
 
+    <!-- FullCalendar CSS (for core and day grid views) -->
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.7/index.global.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.7/index.global.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.7/index.global.min.css" rel="stylesheet">
+
+    <style>
+        /* Existing styling */
         body, html {
             margin: 0;
             padding: 0;
@@ -83,11 +89,10 @@
             margin-bottom: 20px;
         }
 
-        .calendar-placeholder {
-            color: #666;
-            font-style: italic;
-            text-align: center;
-            margin-top: 10px;
+        /* Calendar styling */
+        #calendar {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .flagship-events {
@@ -134,6 +139,19 @@
             color: #666;
             font-size: 0.9em;
         }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact-icons img {
+            width: 25px;
+            margin: 0 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -155,9 +173,7 @@
 <section class="upcoming-events">
     <h2>Upcoming Events</h2>
     <p>We typically hold weekly events, usually with free food, during the school year. We also have several annual flagship events that we run.</p>
-    <div class="calendar-placeholder">
-        Calendar UI component. One option: <a href="https://demo.mobiscroll.com/react/eventcalendar" target="_blank">https://demo.mobiscroll.com/react/eventcalendar</a>
-    </div>
+    <div id="calendar"></div> <!-- Calendar container -->
 </section>
 
 <section class="flagship-events">
@@ -183,6 +199,53 @@
         </div>
     </div>
 </section>
+<footer>
+    <p>Get in Touch!</p>
+    <address>100 Institute Rd, Worcester, MA 01609</address>
+    <div class="contact-icons">
+        <a href="https://discord.gg/NDxvWKhyeU"><img src="assets/img/logos/discord.png" alt="Discord"></a>
+        <a href="https://www.facebook.com/IEEEWPI"><img src="assets/img/logos/fb.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/ieeewpi/"><img src="assets/img/logos/ig.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/groups/14328043/"><img src="assets/img/logos/li.png" alt="LinkedIn"></a>
+        <a href="mailto:ieee-officers@wpi.edu"><img src="assets/img/logos/email.png" alt="Email"></a>
+    </div>
+</footer>
+
+<!-- FullCalendar JavaScript (for core and day grid views) -->
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.7/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.7/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.7/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.7/index.global.min.js"></script>
+
+<!-- Initialize FullCalendar -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events: [
+                { title: 'Weekly Meeting', start: '2024-11-06T17:00:00', url: 'https://example.com/weekly-meeting' },
+                { title: 'Workshop on PCB Design', start: '2024-11-10', url: 'https://example.com/pcb-workshop' },
+                { title: 'Spark Party', start: '2024-12-12', url: 'https://example.com/spark-party' }
+            ],
+            eventClick: function(info) {
+                info.jsEvent.preventDefault(); // Prevent default behavior
+
+                if (info.event.url) {
+                    window.open(info.event.url, '_blank'); // Open the URL in a new tab
+                }
+            }
+        });
+
+        calendar.render();
+    });
+</script>
 
 </body>
 </html>

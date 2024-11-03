@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - IEEE WPI Student Branch</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMYShyOhjAGe7Bk3u6s/98LDcnH9lF9SbBSbiBY" crossorigin="anonymous">
     <style>
         body, html {
             margin: 0;
@@ -51,7 +52,7 @@
         }
 
         .hero-about {
-            background-image: url('assets/img/heroes/about_hero.png');
+            background-image: url('assets/img/heroes/about_hero.png'); /* Replace with actual image path */
             background-size: cover;
             background-position: center;
             height: 60vh;
@@ -70,6 +71,31 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
+        .contact-icons img {
+            width: 25px;
+            margin: 0 10px;
+        }
+
+        .navbar-brand a {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .navbar-logo {
+            height: 1em; /* Matches the font size for alignment */
+            margin-right: 8px; /* Adjust space between logo and text */
+            vertical-align: middle;
+        }
+
+        .navbar-brand span {
+            color: #fff;
+            line-height: 1; /* Keeps text vertically centered */
+        }
+
         .content-section {
             padding: 40px;
             background-color: #fff;
@@ -78,46 +104,38 @@
             text-align: center;
         }
 
-        .content-section p {
-            max-width: 800px;
-            margin: 20px auto;
-        }
-
-        .content-section a {
-            color: #007bff;
-            text-decoration: underline;
-        }
-
-        .content-section a:hover {
-            color: #0056b3;
-        }
-
-        .bylaws-section {
-            padding: 40px;
-            background-color: #f4f4f4;
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
             text-align: center;
         }
 
-        .bylaws-section h2 {
-            font-size: 2em;
-            color: #333;
-            margin-bottom: 20px;
+        .contact-icons {
+            margin-top: 10px;
         }
 
-        .pdf-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            height: 500px;
-            background-color: #fff;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        .contact-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5em;
+            vertical-align: middle;
+        }
+
+        .contact-icons a:hover {
+            color: #ddd;
         }
     </style>
 </head>
 <body>
 
 <header class="navbar">
-    <div class="navbar-brand"><a href="index.html"><strong>IEEE</strong> WPI Student Branch</a></div>
+    <div class="navbar-brand">
+        <a href="index.html">
+            <img src="assets/img/logos/ieee_white.png" alt="IEEE Logo" class="navbar-logo" />
+            <span>WPI Student Branch</span>
+        </a>
+    </div>
     <div class="navbar-links">
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
@@ -151,9 +169,21 @@
 <section class="bylaws-section">
     <h2>Bylaws</h2>
     <div class="pdf-container">
-        <embed src="assets/pdfs/problem.pdf" type="application/pdf" width="100%" height="100%" />
+        <embed src="assets/pdfs/bylaws.pdf" type="application/pdf" width="100%" height="500px" />
     </div>
 </section>
+
+<footer>
+    <p>Get in Touch!</p>
+    <address>100 Institute Rd, Worcester, MA 01609</address>
+    <div class="contact-icons">
+        <a href="https://discord.gg/NDxvWKhyeU"><img src="assets/img/logos/discord.png" alt="Discord"></a>
+        <a href="https://www.facebook.com/IEEEWPI"><img src="assets/img/logos/fb.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/ieeewpi/"><img src="assets/img/logos/ig.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/groups/14328043/"><img src="assets/img/logos/li.png" alt="LinkedIn"></a>
+        <a href="mailto:ieee-officers@wpi.edu"><img src="assets/img/logos/email.png" alt="Email"></a>
+    </div>
+</footer>
 
 </body>
 </html>
