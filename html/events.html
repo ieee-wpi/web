@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - IEEE WPI Student Branch</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet if applicable -->
+    <link rel="stylesheet" href="style.css">
 
-    <!-- FullCalendar CSS (for core and day grid views) -->
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.7/index.global.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.7/index.global.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.7/index.global.min.css" rel="stylesheet">
 
     <style>
-        /* Existing styling */
+
         body, html {
             margin: 0;
             padding: 0;
@@ -173,7 +172,7 @@
 <section class="upcoming-events">
     <h2>Upcoming Events</h2>
     <p>We typically hold weekly events, usually with free food, during the school year. We also have several annual flagship events that we run.</p>
-    <div id="calendar"></div> <!-- Calendar container -->
+    <div id="calendar"></div>
 </section>
 
 <section class="flagship-events">
@@ -181,19 +180,19 @@
     <div class="event-cards">
 
         <div class="event-card">
-            <img src="path-to-pcb-design-image.jpg" alt="PCB Design Class"> <!-- Replace with actual image path -->
+            <img src="assets/events/pcb-cover.png" alt="PCB Design Class">
             <h3>PCB Design Class</h3>
             <p>September</p>
         </div>
 
         <div class="event-card">
-            <img src="path-to-spark-party-image.jpg" alt="Spark Party"> <!-- Replace with actual image path -->
+            <img src="assets/events/spark-party-cover.png" alt="Spark Party">
             <h3>Spark Party</h3>
             <p>December</p>
         </div>
 
         <div class="event-card">
-            <img src="path-to-networking-night-image.jpg" alt="Networking Night"> <!-- Replace with actual image path -->
+            <img src="assets/events/networking-cover.png" alt="Networking Night">
             <h3>Networking Night</h3>
             <p>January</p>
         </div>
@@ -211,13 +210,11 @@
     </div>
 </footer>
 
-<!-- FullCalendar JavaScript (for core and day grid views) -->
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.7/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.7/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.7/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.7/index.global.min.js"></script>
 
-<!-- Initialize FullCalendar -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');

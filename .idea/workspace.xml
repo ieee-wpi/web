@@ -42,6 +42,7 @@
     "JavaScript Debug.index.html.executor": "Run",
     "JavaScript Debug.networking.html.executor": "Run",
     "JavaScript Debug.pcb-design-a24.html.executor": "Run",
+    "JavaScript Debug.people.html.executor": "Run",
     "Node.js.topbar-index.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -80,7 +81,8 @@
       <workItem from="1730156372742" duration="2708000" />
       <workItem from="1730160570343" duration="625000" />
       <workItem from="1730211242387" duration="5564000" />
-      <workItem from="1730586324176" duration="8910000" />
+      <workItem from="1730586324176" duration="9813000" />
+      <workItem from="1731386199729" duration="311000" />
     </task>
     <servers />
   </component>
