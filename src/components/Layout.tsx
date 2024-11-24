@@ -10,33 +10,32 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <header className="bg-[#002855] text-white fixed w-full z-50 flex justify-between items-center px-6 py-4"> 
-        
         <div className="flex items-center space-x-4">
             <StaticImage
               src="../images/img/logos/ieee_white.png"
               alt="IEEE Logo"
               className="h-15 max-w-[150px] w-auto"
             />
-            <span className="text-lg font-bold whitespace-nowrap">WPI Student Branch</span>
+            <span className="text-4xl font-bold whitespace-nowrap"> WPI Student Branch</span>
         </div>
-        <nav className="flex space-x-6 text-sm font-medium">
-          <Link to="/" className="hover:underline">
+        <nav className="flex space-x-6 text-2xl font-medium">
+          <Link to="/" className="hover:underline font-bold">
           Home
           </Link>
-          <Link to="/about" className="hover:underline">
+          <Link to="/about" className="hover:underline font-bold">
             About
           </Link>
-          <Link to="/events" className="hover:underline">
+          <Link to="/events" className="hover:underline font-bold">
             Events
           </Link>
-          <Link to="/people" className="hover:underline">
+          <Link to="/people" className="hover:underline font-bold">
             People
           </Link>
           <a
             href="https://mywpi.wpi.edu/IEEE/club_signup"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            className="hover:underline font-bold"
           >
             Join
           </a>
@@ -60,10 +59,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
 
           <div className="text-sm  flex flex-col">
-            <p className="font-bold">IEEE Site</p>
+            <p className="font-bold">IEEE Sites</p>
             <div className="space-y-1">
               <a
-                href="#"
+                href="https://site.ieee.org/worcester/"
                 className="text-blue-500 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -72,56 +71,56 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </a>
               <br />
               <a
-                href="#"
+                href="http://www.ieee.org/membership_services/membership/students/index.html"
                 className="text-blue-500 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Student Membership Sign Up
+                IEEE Student Membership Sign Up
               </a>
               <br />
               <a
-                href="#"
+                href="https://www.ieee.org"
                 className="text-blue-500 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                More Sites
+                Main IEEE Site
               </a>
             </div>
           </div>
           <div className="flex flex-col items-center">
             <p className="font-bold mb-4">Get in Touch!</p>
             <div className="flex space-x-4">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/NDxvWKhyeU" target="_blank" rel="noopener noreferrer">
                 <StaticImage
                   src="../images/img/logos/discord.png"
                   alt="Discord"
                   className="h-6 w-6"
                 />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/ieeewpi/" target="_blank" rel="noopener noreferrer">
                 <StaticImage
                   src="../images/img/logos/ig.png"
                   alt="Instagram"
                   className="h-6 w-6"
                 />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/groups/14328043/" target="_blank" rel="noopener noreferrer">
                 <StaticImage
                   src="../images/img/logos/li.png"
                   alt="LinkedIn"
                   className="h-6 w-6"
                 />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/IEEEWPI" target="_blank" rel="noopener noreferrer">
                 <StaticImage
                   src="../images/img/logos/facebook.png"
                   alt="Facebook"
                   className="h-6 w-6"
                 />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/IEEE-WPI" target="_blank" rel="noopener noreferrer">
                 <StaticImage
                   src="../images/img/logos/github.png"
                   alt="GitHub"

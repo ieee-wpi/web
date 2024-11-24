@@ -110,7 +110,7 @@ const EventsPage: React.FC = () => {
 
   return (
     <Layout>
-      <section className="relative h-[60vh] flex items-center justify-center text-white text-center">
+      <section className="relative h-[40vh] flex items-center justify-start text-white text-left px-6 lg:px-32">
         <StaticImage
           src="../images/img/heroes/events_hero.png"
           alt="Events Hero"
@@ -118,11 +118,11 @@ const EventsPage: React.FC = () => {
           placeholder="blurred"
         />
         <div className="relative z-10 bg-black bg-opacity-50 p-4 rounded backdrop-blur-md">
-          <h1 className="text-4xl font-bold">Events</h1>
+          <h1 className="text-9xl font-bold tracking-wide">Events</h1>
         </div>
       </section>
       <section className="py-10 px-6 text-center">
-        <p className="text-lg mb-6">
+        <p className="text-xl mb-6">
           We typically hold weekly events, usually with free food, during the school year. We also have several annual{' '}
           <em>flagship events</em> that we run.
         </p>

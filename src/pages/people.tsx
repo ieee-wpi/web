@@ -20,7 +20,7 @@ const PeoplePage: React.FC = () => {
 
   return (
     <Layout>
-      <section className="relative h-[60vh] flex items-center justify-center text-white text-center">
+      <section className="relative h-[40vh] flex items-center justify-start text-white text-left px-6 lg:px-32">
         <StaticImage
           src="../images/img/heroes/people_hero.png"
           alt="People Hero"
@@ -28,7 +28,7 @@ const PeoplePage: React.FC = () => {
           placeholder="blurred"
         />
         <div className="relative z-10 bg-black bg-opacity-50 p-4 rounded backdrop-blur-md">
-          <h1 className="text-4xl font-bold">People</h1>
+          <h1 className="text-9xl font-bold tracking-wide">People</h1>
         </div>
       </section>
 
@@ -39,10 +39,8 @@ const PeoplePage: React.FC = () => {
           className="rounded shadow-lg mb-4"
           placeholder="blurred"
         />
-        <p className="text-lg font-medium">2024-2025 Officer Board</p>
+        <p className="text-lg font-medium underline">2024-2025 Officer Board</p>
       </section>
-
-      {/* Current Officers Section */}
       <section className="py-10 px-6 bg-gray-100 text-center">
         <h2 className="text-3xl font-bold mb-6">Current Officers</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -55,8 +53,6 @@ const PeoplePage: React.FC = () => {
           ))}
         </div>
       </section>
-
-      {/* Archived Officers Section */}
       <section className="py-10 px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Archive of Officers</h2>
         <p className="text-gray-500">TODO: Cards for old officer boards</p>

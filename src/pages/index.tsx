@@ -5,25 +5,21 @@ import { StaticImage } from 'gatsby-plugin-image';
 const IndexPage: React.FC = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative h-[65vh] flex items-end justify-start text-white text-left px-6 md:px-20">
+      <section className="relative h-[65vh] flex items-end justify-start text-white text-left px-6 ">
         <StaticImage
           src="../images/img/sparks.JPG"
           alt="Sparks Background"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        <div className="z-10 bg-black bg-opacity-20 p-6 rounded-lg backdrop-blur-md mb-8">
-          <h1 className="text-2xl font-bold leading-tight">
+        <div className="z-10 bg-black bg-opacity-35 p-10 rounded-lg backdrop-blur-sm mb-8">
+          <h1 className="text-5xl md:text-5xlfont-bold tracking-wide">
             We organize engaging <br />
             <strong>technical, professional, and social</strong> <br /> events at <strong>WPI</strong>.
           </h1>
         </div>
       </section>
-
-      {/* About Section */}
       <section className="bg-white py-10 px-6 md:px-20">
         <div className="flex flex-col md:flex-row items-start gap-8">
-          {/* Left Column: About Link */}
           <div className="md:w-1/4">
             <a
               href="/about"
@@ -32,8 +28,6 @@ const IndexPage: React.FC = () => {
               About
             </a>
           </div>
-
-          {/* Right Column: About Text */}
           <div className="md:w-3/4 text-left">
             <p className="text-lg mb-4">
               IEEE is the world’s largest technical professional organization dedicated to advancing technology for the
@@ -45,7 +39,8 @@ const IndexPage: React.FC = () => {
             </p>
             <p className="text-lg">
               <br /> We have a student lounge in {' '}
-              <a href = "https://maps.app.goo.gl/H9d2DcqgULoDuDiM6" className="text-blue-500 hover:underline"> 
+              <a href = "https://maps.app.goo.gl/H9d2DcqgULoDuDiM6" className="text-blue-500 hover:underline" target = 
+            "_blank" rel='noreferrer noopener'> 
               Atwater Kent Labs 
               </a> {' '}
               with a microwave, fridge, coffee machine, and printer.
@@ -119,7 +114,11 @@ const IndexPage: React.FC = () => {
             </p>
             <p className="text-lg mb-4">
               Are you a WPI student interested in joining? Click{' '}
-              <a href="https://mywpi.wpi.edu/IEEE/club_signup" className="text-blue-500 hover:underline">
+              <a 
+                href="https://mywpi.wpi.edu/IEEE/club_signup" 
+                target = "_blank" 
+                rel='noreferrer noopener'
+                className="text-blue-500 hover:underline">
               here
               </a> {' '}
                to join.
