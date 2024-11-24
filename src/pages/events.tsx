@@ -26,6 +26,7 @@ interface Event {
   title: string;
   description: string;
   image: JSX.Element;
+  link?: string;
 }
 
 const flagshipEvents: Event[] = [
@@ -97,7 +98,7 @@ const EventsPage: React.FC = () => {
         }));
 
         setCalendarEvents(formattedEvents);
-        setError(null); // Clear any previous errors
+        setError(null); 
       } catch (err) {
         console.error('Error fetching events:', err);
         setError('Failed to load events. Please try again later.');
@@ -109,7 +110,6 @@ const EventsPage: React.FC = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center text-white text-center">
         <StaticImage
           src="../images/img/heroes/events_hero.png"
@@ -121,12 +121,10 @@ const EventsPage: React.FC = () => {
           <h1 className="text-4xl font-bold">Events</h1>
         </div>
       </section>
-
-      {/* Calendar Section */}
       <section className="py-10 px-6 text-center">
         <p className="text-lg mb-6">
           We typically hold weekly events, usually with free food, during the school year. We also have several annual{' '}
-          <strong>flagship events</strong> that we run.
+          <em>flagship events</em> that we run.
         </p>
         <h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
         {error ? (
@@ -143,8 +141,6 @@ const EventsPage: React.FC = () => {
           </div>
         )}
       </section>
-
-      {/* Flagship Events Section */}
       <section className="py-10 px-6 bg-gray-100 text-center">
         <h2 className="text-2xl font-bold mb-6">Flagship Events</h2>
         <div className="flex flex-wrap justify-center gap-8">

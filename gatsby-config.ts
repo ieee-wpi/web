@@ -3,20 +3,35 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `IEEE Site`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.ieee.wpi.edu`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
     },
-    __key: "images"
-  }]
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "WPI IEEE Student Branch Site",
+        short_name: "WPI IEEE",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#002855", 
+        display: "minimal-ui",
+        icon: "src/images/img/logos/ieee.png", 
+      },
+    },
+  ],
 };
 
 export default config;
