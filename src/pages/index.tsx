@@ -50,7 +50,7 @@ const IndexPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-gray-100 py-10 px-6 md:px-20">
+      <section className="bg-white-100 py-10 px-6 md:px-20">
         <div className="flex flex-col md:flex-row items-start gap-8">
           <div className="md:w-1/4">
             <a

@@ -44,7 +44,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <main className="pt-20">{children}</main>
 
-      <footer className="bg-gray-100 text-gray-800 p-8">
+      <footer className="bg-white-100 text-white-800 p-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-sm flex flex-col">
             <p className="font-bold">IEEE WPI Student Branch</p>
