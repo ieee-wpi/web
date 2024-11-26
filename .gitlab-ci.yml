@@ -9,7 +9,6 @@ deploy-job:      # This job runs in the deploy stage.
   script:
     - echo "Triggering git pull..."
     - curl "http://arcwww03.wpi.edu:8080/ieee.wpi.edu"
-    - nvm install node@v20.17.0
     - npm install
     - npm run develop
 
