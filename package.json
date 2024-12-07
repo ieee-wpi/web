@@ -1,14 +1,41 @@
 {
-  "name": "ieee.wpi.edu",
+  "name": "ieee-site",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
+  "description": "ieee-site",
+  "author": "Artem Frenk",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
   },
-  "author": "dgorbunov",
-  "license": "ISC",
   "dependencies": {
-    "htmx.org": "^2.0.3"
+    "@babel/runtime": "^7.26.0",
+    "autoprefixer": "^10.4.20",
+    "gatsby": "^5.14.0",
+    "gatsby-plugin-image": "^3.14.0",
+    "gatsby-plugin-manifest": "^5.14.0",
+    "gatsby-plugin-postcss": "^6.14.0",
+    "gatsby-plugin-sharp": "^5.14.0",
+    "gatsby-source-filesystem": "^5.14.0",
+    "gatsby-transformer-sharp": "^5.14.0",
+    "postcss": "^8.4.49",
+    "react": "^18.2.0",
+    "react-big-calendar": "^1.16.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.3.0",
+    "tailwindcss": "^3.4.15"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "typescript": "^5.3.3"
   }
 }
