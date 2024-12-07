@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "ieee-site",
-  "author": "Artem Frenk",
+  "author": "IEEE WPI Student Branch",
   "keywords": [
     "gatsby"
   ],
@@ -13,7 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "deploy": "gatsby build; gatsby serve"
   },
   "dependencies": {
     "@babel/runtime": "^7.26.0",
