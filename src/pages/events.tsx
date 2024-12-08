@@ -114,6 +114,9 @@ const EventsPage: React.FC = () => {
         <StaticImage
           src="../images/img/heroes/events_hero.png"
           alt="Events Hero"
+          layout = "fullWidth"
+          objectFit="cover"
+          objectPosition="center"
           className="absolute inset-0 w-full h-full object-cover z-0"
           placeholder="blurred"
         />
