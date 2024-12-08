@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "deploy": "gatsby clean; gatsby develop -p 9000"
+    "deploy": "gatsby clean; gatsby develop -p 9000",
+    "test": "gatsby clean && gatsby build && gatsby serve"
   },
   "dependencies": {
     "@babel/runtime": "^7.26.0",

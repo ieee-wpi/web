@@ -66,29 +66,36 @@ const IndexPage: React.FC = () => {
               Here are some of our annual <strong>flagship events</strong>:
             </p>
             <div className="flex flex-wrap justify-between gap-4">
-              <div className="w-56 text-center">
-                <StaticImage
-                  src="../images/events/pcb-cover.png"
-                  alt="PCB Design Class"
-                  className="rounded shadow-lg"
-                />
-                <h3 className="text-xl font-bold mt-2">PCB Design Class</h3>
-                <p className="text-gray-500">September</p>
-              </div>
-              <div className="w-56 text-center">
+              <a
+                href="https://pcb.wpi.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-56 text-center block"
+              >
+                <div className="rounded shadow-lg hover:shadow-xl transition-shadow">
+                  <StaticImage
+                    src="../images/events/pcb-cover.png"
+                    alt="PCB Design Class"
+                    className="rounded"
+                  />
+                  <h3 className="text-xl font-bold mt-2">PCB Design Class</h3>
+                  <p className="text-gray-500">September</p>
+                </div>
+              </a>
+              <div className="w-56 text-center rounded shadow-lg hover:shadow-xl transition-shadow">
                 <StaticImage
                   src="../images/events/spark-party-cover.png"
                   alt="Spark Party"
-                  className="rounded shadow-lg"
+                  className="rounded"
                 />
                 <h3 className="text-xl font-bold mt-2">Spark Party</h3>
                 <p className="text-gray-500">December</p>
               </div>
-              <div className="w-56 text-center">
+              <div className="w-56 text-center rounded shadow-lg hover:shadow-xl transition-shadow">
                 <StaticImage
                   src="../images/events/networking-cover.png"
                   alt="Networking Night"
-                  className="rounded shadow-lg"
+                  className="rounded"
                 />
                 <h3 className="text-xl font-bold mt-2">Networking Night</h3>
                 <p className="text-gray-500">January</p>

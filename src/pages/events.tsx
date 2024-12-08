@@ -5,7 +5,7 @@ import { Calendar as BigCalendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { format, parse, startOfWeek, getDay } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
-
+import EventCard from '../components/EventCard'; // Import the EventCard component
 const locales = { 'en-US': enUS };
 
 const localizer = dateFnsLocalizer({
@@ -43,6 +43,7 @@ const flagshipEvents: Event[] = [
         placeholder="blurred"
       />
     ),
+    link: 'https://pcb.wpi.edu'
   },
   {
     title: 'Spark Party',
@@ -114,6 +115,9 @@ const EventsPage: React.FC = () => {
         <StaticImage
           src="../images/img/heroes/events_hero.png"
           alt="Events Hero"
+          layout = "fullWidth"
+          objectFit="cover"
+          objectPosition="center"
           className="absolute inset-0 w-full h-full object-cover z-0"
           placeholder="blurred"
         />
@@ -142,19 +146,37 @@ const EventsPage: React.FC = () => {
         )}
       </section>
       <section className="py-10 px-6 bg-gray-100 text-center">
-        <h2 className="text-2xl font-bold mb-6">Flagship Events</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {flagshipEvents.map((event, idx) => (
-            <div key={idx} className="w-80 bg-white rounded shadow-md hover:shadow-lg transition-shadow">
-              <div className="mb-4">{event.image}</div>
-              <div className="px-4 pb-4">
-                <h3 className="text-xl font-bold">{event.title}</h3>
-                <p className="text-gray-500">{event.description}</p>
-              </div>
+  <h2 className="text-2xl font-bold mb-6">Flagship Events</h2>
+  <div className="flex flex-wrap justify-center gap-8">
+    {flagshipEvents.map((event, idx) => (
+      <div key={idx} className="w-80">
+        {event.link ? (
+          <a
+            href={event.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-white rounded shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div className="mb-4">{event.image}</div>
+            <div className="px-4 pb-4">
+              <h3 className="text-xl font-bold">{event.title}</h3>
+              <p className="text-gray-500">{event.description}</p>
             </div>
-          ))}
-        </div>
-      </section>
+          </a>
+        ) : (
+          <div className="bg-white rounded shadow-md hover:shadow-lg transition-shadow">
+            <div className="mb-4">{event.image}</div>
+            <div className="px-4 pb-4">
+              <h3 className="text-xl font-bold">{event.title}</h3>
+              <p className="text-gray-500">{event.description}</p>
+            </div>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+</section>
+
     </Layout>
   );
 };
