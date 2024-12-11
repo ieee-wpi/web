@@ -1,17 +1,20 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const IndexPage: React.FC = () => {
   return (
-    <Layout>
-      <section className="relative h-[65vh] w-full flex items-end justify-start text-white text-left px-6">
+    <>
+    <Navbar></Navbar>
+      <section className="relative h-[65vh] w-full flex items-end justify-start text-white text-left px-6 top-0">
+        {/* change section from relative to absolute, fix & break */}
         <StaticImage
           src="../images/img/sparks.jpg"
           alt="Sparks Background"
-          className="absolute inset-0 w-full h-full object-cover z-0 hero"
+          className="absolute inset-0 w-full h-full object-cover z-0 hero top-0"
         />
-        <div className="z-10 bg-black bg-opacity-15 p-10 rounded-lg backdrop-blur-sm mb-8">
+        <div className="ltab_transp">
           <h1 className="text-5xl md:text-5xlfont-bold tracking-wide">
             We organize engaging <br />
             <strong>technical, professional, and social</strong> <br/> events at <strong>WPI</strong>.
@@ -141,8 +144,9 @@ const IndexPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-    </Layout>
+      <Footer></Footer>
+      </>
+    
   );
 };
 
