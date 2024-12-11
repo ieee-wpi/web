@@ -92,7 +92,12 @@
                   <p className="text-gray-500">December</p>
                 </div>
                 <div className="w-56 text-center rounded shadow-lg hover:shadow-xl transition-shadow">
-                  <a href="/networking" className="block">
+                <a
+                  href="/networking"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-56 text-center block"
+                >
                   <StaticImage
                     src="../images/events/networking-cover.png"
                     alt="Networking Night"

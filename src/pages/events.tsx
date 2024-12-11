@@ -71,6 +71,7 @@ const flagshipEvents: Event[] = [
         placeholder="blurred"
       />
     ),
+    link: "/networking"
   },
 ];
 
