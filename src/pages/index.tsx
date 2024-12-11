@@ -5,12 +5,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 const IndexPage: React.FC = () => {
   return (
     <Layout>
-      <section className="relative h-[65vh] w-full flex items-end justify-start text-white text-left px-6 top-0">
-        {/* change section from relative to absolute, fix & break */}
+      <section className="relative h-[65vh] w-full flex items-end justify-start text-white text-left px-6">
         <StaticImage
           src="../images/img/sparks.jpg"
           alt="Sparks Background"
-          className="absolute inset-0 w-full h-full object-cover z-0 hero top-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 hero"
         />
         <div className="ltab_transp">
           <h1 className="text-5xl md:text-5xlfont-bold tracking-wide">

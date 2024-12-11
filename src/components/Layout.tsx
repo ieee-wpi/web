@@ -9,7 +9,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
-      <header className="bg-[rgba(0,0,0,0.5)] text-white fixed w-full z-50 flex justify-between items-center px-6 py-4 backdrop-blur-md shadow-lg"> 
+      <header className="bg-[#002855] text-white fixed w-full z-50 flex justify-between items-center px-6 py-4"> 
         <div className="flex items-center space-x-4">
             <StaticImage
               src="../images/img/logos/ieee_white.png"

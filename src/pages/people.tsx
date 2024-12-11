@@ -24,7 +24,7 @@ const PeoplePage: React.FC = () => {
       <StaticImage
         src="../images/img/heroes/people_hero.png"
         alt="People Hero"
-        className="absolute inset-0 w-full h-full object-cover z-0 hero"
+        className="absolute inset-0 w-full h-full"
       />
       <div className="relative z-10 bg-black bg-opacity-50 p-6 rounded backdrop-blur-md">
         <h1 className="text-9xl font-bold tracking-wide">People</h1>
