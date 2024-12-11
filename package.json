@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "deploy": "gatsby clean; gatsby develop -p 9000",
+    "deploy": "gatsby clean && gatsby build && gatsby serve",
     "test": "gatsby clean && gatsby build && gatsby serve"
   },
   "dependencies": {
