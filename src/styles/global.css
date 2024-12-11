@@ -23,4 +23,10 @@ body, html {
     overflow-x: hidden;
     font-family: "San Francisco", -apple-system, BlinkMacSystemFont, sans-serif;
 }
-
+.hero {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
