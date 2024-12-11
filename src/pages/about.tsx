@@ -21,7 +21,7 @@ const AboutPage: React.FC = () => {
         <StaticImage
           src="../images/img/heroes/about_hero.png"
           alt="About Hero"
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 hero"
         />
         <div className="relative z-10 bg-black bg-opacity-50 p-4 rounded backdrop-blur-sm">
           <h1 className="text-9xl font-bold tracking-wide">About</h1>
