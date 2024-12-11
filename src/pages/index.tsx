@@ -11,7 +11,7 @@ const IndexPage: React.FC = () => {
           alt="Sparks Background"
           className="absolute inset-0 w-full h-full object-cover z-0 hero"
         />
-        <div className="ltab_transp">
+        <div className="z-10 bg-black bg-opacity-15 p-10 rounded-lg backdrop-blur-sm mb-8">
           <h1 className="text-5xl md:text-5xlfont-bold tracking-wide">
             We organize engaging <br />
             <strong>technical, professional, and social</strong> <br/> events at <strong>WPI</strong>.

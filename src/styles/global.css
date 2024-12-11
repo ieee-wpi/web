@@ -30,17 +30,3 @@ body, html {
   height: 100% !important;
   object-fit: cover !important;
 }
-.ltab_transp{
-  width: 50%;
-  backdrop-filter: blur(7px);
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  margin-bottom: 4%;
-  padding: 25px;
-  padding-left: 70px;
-  filter: drop-shadow(0 0 0.1rem rgb(34, 34, 34));
-  position: absolute; 
-  left: 0; 
-  top: 50%; 
-  transform: translateY(30%); 
-}

@@ -5,7 +5,6 @@ import { Calendar as BigCalendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { format, parse, startOfWeek, getDay } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
-import EventCard from '../components/EventCard'; // Import the EventCard component
 const locales = { 'en-US': enUS };
 
 const localizer = dateFnsLocalizer({
@@ -118,7 +117,7 @@ const EventsPage: React.FC = () => {
           layout = "fullWidth"
           objectFit="cover"
           objectPosition="center"
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 hero"
           placeholder="blurred"
         />
         <div className="relative z-10 bg-black bg-opacity-50 p-4 rounded backdrop-blur-md">
