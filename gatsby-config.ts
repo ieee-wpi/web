@@ -2,8 +2,8 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `IEEE Site`,
-    siteUrl: `https://www.ieee.wpi.edu`,
+    title: `IEEE WPI Student Branch`,
+    siteUrl: `https://ieee.wpi.edu`,
   },
   graphqlTypegen: true,
   plugins: [
@@ -22,13 +22,13 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "WPI IEEE Student Branch Site",
+        name: "IEEE WPI Student Branch",
         short_name: "WPI IEEE",
         start_url: "/",
         background_color: "#ffffff",
         theme_color: "#002855", 
         display: "minimal-ui",
-        icon: "src/images/img/logos/ieee.png", 
+        icon: "src/images/logos/favicon.png", 
       },
     },
   ],

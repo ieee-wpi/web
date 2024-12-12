@@ -1,140 +1,120 @@
-import React, { ReactNode } from 'react';
-import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
-
+import React from "react";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import { FaInstagram, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 //official IEEE color for 100% is 002855 https://brand-experience.ieee.org/wp-content/uploads/2020/10/IEEE_Brand_Colors_Hex_Formulas_for_Solids_and_Tints.pdf
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
-    <>
-      <header className="bg-[rgba(0,0,0,0.5)] text-white fixed w-full z-50 flex justify-between items-center px-6 py-4 backdrop-blur-md shadow-lg"> 
-        <div className="flex items-center space-x-4">
+    <footer className="bg-gray-100">
+      <div className="container-page max-w-4xl py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center text-center md:text-left">
+          {/* Logo and Contact Info */}
+          <div className="flex flex-col space-y-2">
             <StaticImage
-              src="../images/img/logos/ieee_white.png"
+              src="../images/logos/ieee_black.png"
               alt="IEEE Logo"
-              className="h-15 max-w-[150px] w-auto"
+              className="w-32 mb-2"
+              loading="eager"
             />
-            <span className="text-4xl font-bold whitespace-nowrap"> WPI Student Branch</span>
-        </div>
-        <nav className="flex space-x-6 text-2xl font-medium">
-          <Link to="/" className="hover:underline font-bold">
-          Home
-          </Link>
-          <Link to="/about" className="hover:underline font-bold">
-            About
-          </Link>
-          <Link to="/events" className="hover:underline font-bold">
-            Events
-          </Link>
-          <Link to="/people" className="hover:underline font-bold">
-            People
-          </Link>
-          <a
-            href="https://mywpi.wpi.edu/IEEE/club_signup"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline font-bold"
-          >
-            Join
-          </a>
-        </nav>
-      </header>
-      <footer className="bg-white-100 text-white-800 p-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-sm flex flex-col">
-            <p className="font-bold">IEEE WPI Student Branch</p>
-            <p>100 Institute Rd.<br />Worcester, MA 01609<br/></p>
-            
+            <p>IEEE WPI Student Branch</p>
+            <p>100 Institute Rd.</p>
+            <p>Worcester, MA 01609</p>
             <a
-              href="mailto:ieee-officers@wpi.edu"
-              className="text-blue-500 hover:underline"
+              href="mailto:gr-ieee-exec@wpi.edu"
+              className="text-blue-600 hover:underline"
             >
-              ieee-officers@wpi.edu
+              gr-ieee-exec@wpi.edu
             </a>
           </div>
 
-          <div className="text-sm  flex flex-col">
-            <p className="font-bold">IEEE Sites</p>
-            <div className="space-y-1">
+          {/* Navigation Links */}
+          <div className="flex flex-col space-y-2">
+            <h2 className="font-bold">Pages</h2>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+              <Link to="/" className="hover:text-blue-600">
+                Home
+              </Link>
+              <Link to="/events" className="hover:text-blue-600">
+                Events
+              </Link>
+              <Link to="/about" className="hover:text-blue-600">
+                About
+              </Link>
+              <Link to="/people" className="hover:text-blue-600">
+                People
+              </Link>
               <a
-                href="https://site.ieee.org/worcester/"
-                className="text-blue-500 hover:underline"
+                href="https://mywpi.wpi.edu/ieee/club_signup"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-blue-600"
               >
-                Worcester Section Site
+                Join
               </a>
-              <br />
-              <a
-                href="http://www.ieee.org/membership_services/membership/students/index.html"
-                className="text-blue-500 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                IEEE Student Membership Sign Up
-              </a>
-              <br />
               <a
                 href="https://www.ieee.org"
-                className="text-blue-500 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-blue-600"
               >
-                Main IEEE Site
+                IEEE
               </a>
             </div>
           </div>
-          <div className="flex flex-col items-center">
-            <p className="font-bold mb-4">Get in Touch!</p>
-            <div className="flex space-x-4">
-              <a href="https://discord.gg/NDxvWKhyeU" target="_blank" rel="noopener noreferrer">
-                <StaticImage
-                  src="../images/img/logos/discord.png"
-                  alt="Discord"
-                  className="h-6 w-6"
-                />
+
+          {/* Social Media Links */}
+          <div className="flex flex-col space-y-2">
+            <h2 className="font-bold">Connect</h2>
+            <div className="flex flex-col space-y-2">
+              <a
+                href="mailto:gr-ieee-exec@wpi.edu"
+                className="flex items-center space-x-2 hover:text-blue-600"
+              >
+                <MdOutlineEmail className="text-xl" />
+                <span>Email Us</span>
               </a>
-              <a href="https://www.instagram.com/ieeewpi/" target="_blank" rel="noopener noreferrer">
-                <StaticImage
-                  src="../images/img/logos/ig.png"
-                  alt="Instagram"
-                  className="h-6 w-6"
-                />
+              <a
+                href="https://www.instagram.com/ieeewpi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-blue-600"
+              >
+                <FaInstagram className="text-xl" />
+                <span>Instagram</span>
               </a>
-              <a href="https://www.linkedin.com/groups/14328043/" target="_blank" rel="noopener noreferrer">
-                <StaticImage
-                  src="../images/img/logos/li.png"
-                  alt="LinkedIn"
-                  className="h-6 w-6"
-                />
+              <a
+                href="https://www.facebook.com/ieeewpi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-blue-600"
+              >
+                <FaFacebook className="text-xl" />
+                <span>Facebook</span>
               </a>
-              <a href="https://www.facebook.com/IEEEWPI" target="_blank" rel="noopener noreferrer">
-                <StaticImage
-                  src="../images/img/logos/facebook.png"
-                  alt="Facebook"
-                  className="h-6 w-6"
-                />
+              <a
+                href="https://www.linkedin.com/groups/14328043/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-blue-600"
+              >
+                <FaLinkedin className="text-xl" />
+                <span>LinkedIn</span>
               </a>
-              <a href="https://github.com/IEEE-WPI" target="_blank" rel="noopener noreferrer">
-                <StaticImage
-                  src="../images/img/logos/github.png"
-                  alt="GitHub"
-                  className="h-6 w-6"
-                />
-              </a>
-              <a href="mailto:ieee-officers@wpi.edu">
-                <StaticImage
-                  src="../images/img/logos/email.png"
-                  alt="Email"
-                  className="h-6 w-6"
-                />
+              <a
+                href="https://github.com/ieee-wpi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-blue-600"
+              >
+                <FaGithub className="text-xl" />
+                <span>GitHub</span>
               </a>
             </div>
           </div>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
-};
-
-export default Footer;
+}
