@@ -18,17 +18,6 @@ const IndexPage: React.FC = () => {
           </h1>
         </div>
       </section>
-      <section className="bg-white py-10 px-6 md:px-20">
-        <div className="flex flex-col md:flex-row items-start gap-8">
-          <div className="md:w-1/4">
-            <a
-              href="/about"
-              className="text-3xl font-bold border-b-2 border-black inline-block hover:underline"
-            >
-              About
-            </a>
-          </div>
-        </section>
         <section className="bg-white py-10 px-6 md:px-20">
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="md:w-1/4">
