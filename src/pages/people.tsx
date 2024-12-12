@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/Navbar';
 import { StaticImage } from 'gatsby-plugin-image';
+import Footer from '../components/Footer';
 
 const PeoplePage: React.FC = () => {
   const officers = Array(9).fill({
@@ -19,7 +20,8 @@ const PeoplePage: React.FC = () => {
   });
 
   return (
-    <Layout>
+    <>
+    <Layout></Layout>
       <section className="relative h-[40vh] flex items-center justify-start text-white text-left px-6 lg:px-32">
       <StaticImage
         src="../images/img/heroes/people_hero.png"
@@ -58,7 +60,8 @@ const PeoplePage: React.FC = () => {
         <h2 className="text-3xl font-bold mb-4">Archive of Officers</h2>
         <p className="text-gray-500">TODO: Cards for old officer boards</p>
       </section>
-    </Layout>
+      <Footer></Footer>
+    </>
   );
 };
 
