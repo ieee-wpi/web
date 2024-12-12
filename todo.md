@@ -1,4 +1,6 @@
-- networking night page.
-- make topbar relative, not fixed. add bg gray or black bg 100 or so to not make the blur ugly. 
-- add officer pics
-- add archive of old members
+| Task                  | Status      |
+|-----------------------|-------------|
+| ~~Navbar Styling~~    | DONE        |
+| ~~Officer Pictures~~  | DONE        |
+| Networking Night Page | WIP         |
+| Old Member Archive    | NOT STARTED |
