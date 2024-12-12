@@ -2,14 +2,12 @@ import React, { ReactNode } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
-interface LayoutProps {
-  children: ReactNode;
-}
+
 //official IEEE color for 100% is 002855 https://brand-experience.ieee.org/wp-content/uploads/2020/10/IEEE_Brand_Colors_Hex_Formulas_for_Solids_and_Tints.pdf
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Footer: React.FC = () => {
   return (
-    <div>
-      <header className="bg-[#00629B] text-white fixed w-full z-50 flex justify-between items-center px-6 py-4"> 
+    <>
+      <header className="bg-[rgba(0,0,0,0.5)] text-white fixed w-full z-50 flex justify-between items-center px-6 py-4 backdrop-blur-md shadow-lg"> 
         <div className="flex items-center space-x-4">
             <StaticImage
               src="../images/img/logos/ieee_white.png"
@@ -41,9 +39,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </a>
         </nav>
       </header>
-
-      <main className="pt-20">{children}</main>
-
       <footer className="bg-white-100 text-white-800 p-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-sm flex flex-col">
@@ -138,8 +133,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 };
 
-export default Layout;
+export default Footer;

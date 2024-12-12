@@ -1,8 +1,9 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../components/Navbar';
 import { StaticImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import { FaDownload } from 'react-icons/fa';
+import Footer from '../components/Footer';
 
 const AboutPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -16,7 +17,8 @@ const AboutPage: React.FC = () => {
   const pdfUrl = data.file.publicURL;
 
   return (
-    <Layout>
+  <>
+    <Layout></Layout>
       <section className="relative h-[40vh] flex justify-start items-center text-white text-left px-6 lg:px-32">
         <StaticImage
           src="../images/img/heroes/about_hero.png"
@@ -77,7 +79,8 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
-    </Layout>
+      <Footer></Footer>
+    </>
   );
 };
 

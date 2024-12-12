@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Layout from '../components/Layout';
+import Layout from '../components/Navbar';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Calendar as BigCalendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { format, parse, startOfWeek, getDay } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
+import Footer from '../components/Footer';
 const locales = { 'en-US': enUS };
 
 const localizer = dateFnsLocalizer({
@@ -110,7 +111,8 @@ const EventsPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout>
+    <>
+    <Layout></Layout>
       <section className="relative h-[40vh] flex items-center justify-start text-white text-left px-6 lg:px-32">
         <StaticImage
           src="../images/img/heroes/events_hero.png"
@@ -176,8 +178,8 @@ const EventsPage: React.FC = () => {
     ))}
   </div>
 </section>
-
-    </Layout>
+<Footer></Footer>
+</>
   );
 };
 
