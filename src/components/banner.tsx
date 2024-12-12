@@ -13,15 +13,15 @@ interface BannerProps {
 }
 
 const HomeBanner = () => (
-  <section className="relative h-[65vh] w-full flex items-end justify-start text-white text-left px-6 top-0">
+  <section className="relative h-[65vh] w-full flex items-end justify-start text-white px-6 top-0">
     <StaticImage
       src="../images/heroes/home_hero.JPG"
       alt="Tesla coils on WPI's Quad"
-      className="absolute inset-0 w-full h-full object-cover z-0 hero"
+      className="absolute inset-0 w-full h-full object-cover z-0"
       loading="eager"
     />
-    <div className="ltab_transp">
-      <h1 className="text-5xl md:text-5xlfont-bold tracking-wide">
+    <div className="absolute bottom-6 left-6 z-10 bg-black bg-opacity-15 p-6 rounded">
+      <h1 className="text-2xl md:text-3xl font-bold">
         We organize engaging <br />
         <strong>technical, professional, and social</strong> <br /> events at{" "}
         <strong>WPI</strong>.
