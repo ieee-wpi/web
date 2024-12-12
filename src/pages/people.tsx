@@ -3,21 +3,143 @@ import Layout from '../components/Navbar';
 import { StaticImage } from 'gatsby-plugin-image';
 import Footer from '../components/Footer';
 
+
+interface Officer {
+  name: string;
+  position: string;
+  image: React.ReactNode;
+}
+
+
 const PeoplePage: React.FC = () => {
-  const officers = Array(9).fill({
-    name: 'Bob Builder',
-    position: "Position | '99",
-    image: (
-      <StaticImage
-        src="../images/img/bob.png"
-        alt="Bob Builder"
-        className="rounded-full shadow-md"
-        width={100}
-        height={100}
-        placeholder="blurred"
-      />
-    ),
-  });
+  const officers: Officer[] = [
+    {
+      name: 'Daniel Gorbunov',
+      position: 'President',
+      image: (
+        <StaticImage
+          src="../images/people/gorbunov.jpg"
+          alt="Daniel Gorbunov"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      ),
+    },
+    {
+      name: 'Hubert Liu',
+      position: 'Vice President',
+      image: (
+        <StaticImage
+          src="../images/people/liu.jpg"
+          alt="Hubert Liu"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      ),
+    },
+    {
+      name: 'Ryan Ranjitkar',
+      position: 'Secretary',
+      image: (
+        <StaticImage
+          src="../images/people/ranjitkar.jpg"
+          alt="Ryan Ranjitkar"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      ),
+    },
+    {
+      name: 'George Shi',
+      position: 'Treasurer',
+      image: (
+        <StaticImage
+          src="../images/people/shi.jpg"
+          alt="George Shi"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      ),
+    },
+    {
+      name: 'Jack Kamataris',
+      position: 'Events Officer',
+      image: (
+        <StaticImage
+          src = "../images/people/kamataris.jpg"
+          alt="Jack Kamataris"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      )
+    },
+    {
+      name: 'Todd Petry',
+      position: 'Events Officer',
+      image: (
+        <StaticImage
+          src = "../images/people/petry.jpg"
+          alt="Todd Petry"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      )
+    },
+    {
+      name: 'Brendon Peters',
+      position: 'Public Relations Chair',
+      image: (
+        <StaticImage
+          src = "../images/people/peters.jpg"
+          alt="Brendon Peters"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      )
+    },
+    {
+      name: 'Will Buchta',
+      position: 'Projects Chair',
+      image: (
+        <StaticImage
+          src = "../images/people/buchta.jpg"
+          alt="J"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      )
+    },
+    {
+      name: 'Artem Frenk',
+      position: 'Web Chair',
+      image: (
+        <StaticImage
+          src = "../images/people/frenk.jpg"
+          alt="Artem Frenk"
+          className="rounded-full shadow-md"
+          width={100}
+          height={100}
+          placeholder="blurred"
+        />
+      )
+    }
+  ];
 
   return (
     <>
