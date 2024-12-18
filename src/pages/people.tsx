@@ -168,10 +168,10 @@ export default function PeoplePage() {
             ))}
           </div>
         </section>
-        <section className="py-10 px-6 text-center">
+        {/* <section className="py-10 px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Archive of Officers</h2>
           <p className="text-gray-500">TODO: Cards for old officer boards</p>
-        </section>
+        </section> */}
       </main>
     </Layout>
   );

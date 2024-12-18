@@ -6,29 +6,39 @@ export enum BannerType {
   About = "About",
   Events = "Events",
   People = "People",
+  Networking = "Networking"
 }
 
 interface BannerProps {
   type: BannerType;
 }
 
-const HomeBanner = () => (
-  <section className="relative h-[65vh] w-full flex items-end justify-start text-white px-6 top-0">
-    <StaticImage
-      src="../images/heroes/home_hero.JPG"
-      alt="Tesla coils on WPI's Quad"
-      className="absolute inset-0 w-full h-full object-cover z-0"
-      loading="eager"
-    />
-    <div className="absolute bottom-6 left-6 z-10 bg-black bg-opacity-15 p-6 rounded">
-      <h1 className="text-2xl md:text-3xl font-bold">
-        We organize engaging <br />
-        <strong>technical, professional, and social</strong> <br /> events at{" "}
-        <strong>WPI</strong>.
-      </h1>
-    </div>
-  </section>
-);
+const HomeBanner: React.FC = () => {
+  return (
+    <section className="relative h-[65vh] w-full text-white">
+      <div className="absolute inset-0 z-0">
+        <StaticImage
+          src="../images/heroes/home_hero.JPG"
+          alt="Tesla coils on WPI's Quad"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <div
+        className="absolute bottom-2 left-2 md:bottom-6 md:left-6 lg:bottom-8 lg:left-8 z-10 bg-black bg-opacity-15 p-4 md:p-6 rounded-lg"
+      >
+        <h1 className="text-lg md:text-2xl lg:text-3xl font-bold leading-tight">
+          We organize engaging <br />
+          <strong>technical, professional, and social</strong> <br />
+          events at <strong>WPI</strong>.
+        </h1>
+      </div>
+    </section>
+  );
+};
+
+
 
 const PageBanner = ({ image, title }: { image: string; title: string }) => {
   const StaticBanner = () => {
@@ -60,6 +70,15 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
             loading="eager"
           />
         );
+      case "networking":
+        return (
+          <StaticImage
+          src="../images/heroes/networking_hero.jpg"
+          alt="Sparks Background"
+          className="absolute inset-0 w-full h-full object-cover z-0 hero"
+          loading = "eager"
+        />
+        )
       default:
         return null;
     }
