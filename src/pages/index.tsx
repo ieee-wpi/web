@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <Layout>
       <Banner type={BannerType.Home} />
-      <main className="container mx-auto px-4 md:px-8 lg:px-16">
+      <main className="container-page">
         <div className="flex flex-col gap-20">
           <section>
             <div className="flex flex-col md:flex-row items-start gap-8">
@@ -42,13 +42,13 @@ export default function HomePage() {
                   <br /> We have a student lounge in{" "}
                   <a
                     href="https://maps.app.goo.gl/H9d2DcqgULoDuDiM6"
-                    className="text-blue-500 hover:underline"
+                    className="underline hover:text-blue-600"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
                     Atwater Kent Labs
                   </a>{" "}
-                  with a microwave, fridge, coffee machine, and printer. We
+                  with a microwave, fridge, coffee machine, and printer. We also have a variety of electronics and project materials in the lounge. We
                   typically host weekly events, usually with free food, during
                   the school year.
                 </p>
@@ -69,7 +69,8 @@ export default function HomePage() {
 
               <div className="md:w-3/4 text-left">
                 <p className="text-lg mb-6">
-                  Here are some of our annual <strong>flagship events</strong>:
+                  <p>Check our <a href="/events" className="underline hover:text-blue-600">events calendar</a> for the latest events.</p>
+                  <br/><p>Here are some of our annual <strong>flagship events</strong>:</p>
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <EventCard
@@ -125,25 +126,25 @@ export default function HomePage() {
                 </a>
               </div>
               <div className="md:w-3/4">
-                <div className="float-right ml-6 mb-4 w-1/3 flex flex-col items-center">
+                {/* <div className="float-right ml-6 mb-4 w-1/3 flex flex-col items-center">
                   <p className="text-lg font-bold mb-2">2024 Officer Board</p>
                   <StaticImage
                     src="../images/people/officer_board.png"
                     alt="2024 Officer Board"
                     className="rounded shadow-lg"
                   />
-                </div>
-                <p className="text-lg mb-4">
-                  We have over 150 general members in our branch, across majors
-                  like ECE, CS, and RBE.
+                </div> */}
+                <p className="text-lg">
+                  We have over 150 general members in our branch, primarily
+                  students majoring in <strong>ECE, CS, and RBE</strong>.
                 </p>
-                <p className="text-lg mb-4">
+                <br/><p className="text-lg">
                   Are you a WPI student interested in joining? Click{" "}
                   <a
                     href="https://mywpi.wpi.edu/IEEE/club_signup"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="text-blue-500 hover:underline"
+                    className="underline hover:text-blue-600"
                   >
                     here
                   </a>{" "}

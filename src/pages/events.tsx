@@ -119,7 +119,7 @@ export default function EventsPage() {
               the school year. We also have several annual{" "}
               <em>flagship events</em> that we run.
             </p>
-            <h2 className="text-2xl font-bold mb-4">Event Calendar</h2>
+            <h2 className="text-2xl font-bold mb-4">Events Calendar</h2>
             {error ? (
               <p className="text-red-500">{error}</p>
             ) : (

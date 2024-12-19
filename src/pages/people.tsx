@@ -4,6 +4,8 @@ import { StaticImage } from "gatsby-plugin-image";
 import Footer from "../components/footer";
 import Layout from "@/components/layout";
 import Banner, { BannerType } from "@/components/banner";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { OfficerProfile } from "@/components/officer-profile";
 
 interface Officer {
   name: string;
@@ -145,7 +147,24 @@ export default function PeoplePage() {
     <Layout>
       <Banner type={BannerType.People} />
       <main className="container-page">
-        <section className="py-10 px-6 text-center">
+        <Card className="my-10">
+          <CardHeader>
+            <CardTitle className="text-3xl text-center">Current Officers</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {officers.map((officer, idx) => (
+                <OfficerProfile
+                  key={idx}
+                  name={officer.name}
+                  position={officer.position}
+                  image={officer.image}
+                />
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+        {/* <section className="py-10 px-6 text-center">
           <StaticImage
             src="../images/people/officer_board.png"
             alt="2024-2025 Officer Board"
@@ -155,19 +174,7 @@ export default function PeoplePage() {
           <p className="text-lg font-medium underline">
             2024-2025 Officer Board
           </p>
-        </section>
-        <section className="py-10 px-6 bg-gray-100 text-center">
-          <h2 className="text-3xl font-bold mb-6">Current Officers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {officers.map((officer, idx) => (
-              <div key={idx} className="text-center">
-                <div className="mb-4">{officer.image}</div>
-                <h3 className="text-lg font-bold">{officer.name}</h3>
-                <p className="text-gray-500">{officer.position}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        </section> */}
         {/* <section className="py-10 px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Archive of Officers</h2>
           <p className="text-gray-500">TODO: Cards for old officer boards</p>

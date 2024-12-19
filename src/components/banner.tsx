@@ -15,24 +15,27 @@ interface BannerProps {
 
 const HomeBanner: React.FC = () => {
   return (
-    <section className="relative h-[65vh] w-full text-white">
+    <section className="relative h-[600px] w-full text-white">
       <div className="absolute inset-0 z-0">
         <StaticImage
           src="../images/heroes/home_hero.JPG"
           alt="Tesla coils on WPI's Quad"
-          className="w-full h-full object-cover"
+          className="w-full h-full"
           loading="eager"
+          objectFit="cover"
+          objectPosition="center 70%"
         />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/70 to-transparent"></div>
       </div>
 
-      <div
-        className="absolute bottom-2 left-2 md:bottom-6 md:left-6 lg:bottom-8 lg:left-8 z-10 bg-black bg-opacity-15 p-4 md:p-6 rounded-lg"
-      >
-        <h1 className="text-lg md:text-2xl lg:text-3xl font-bold leading-tight">
-          We organize engaging <br />
-          <strong>technical, professional, and social</strong> <br />
-          events at <strong>WPI</strong>.
-        </h1>
+      <div className="container-page h-full relative">
+        <div className="absolute bottom-8 z-10 bg-black bg-opacity-15 rounded-lg">
+          <h1 className="text-lg md:text-2xl lg:text-3xl font-bold leading-tight backdrop-blur-sm rounded-lg">
+            We organize engaging <br />
+            <strong>technical, professional, and social</strong> <br />
+            events at <strong>WPI</strong>.
+          </h1>
+        </div>
       </div>
     </section>
   );
@@ -85,11 +88,11 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
   };
 
   return (
-    <section className="relative h-[40vh] flex justify-start items-center text-white text-left px-6 lg:px-32">
+    <section className="relative h-[300px] w-full text-white">
       <StaticBanner />
-      <div className="container-page">
-        <div className="relative z-10 bg-black bg-opacity-50 p-4 rounded backdrop-blur-sm w-min">
-          <h1 className="text-8xl font-bold tracking-wide">{title}</h1>
+      <div className="container-page h-full relative flex items-center">
+        <div className="z-10 bg-black bg-opacity-50 p-4 rounded backdrop-blur-sm w-min">
+          <h1 className="text-6xl font-bold tracking-wide">{title}</h1>
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="container-page max-w-4xl py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center text-center md:text-left">
           {/* Logo and Contact Info */}
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2 items-center">
             <StaticImage
               src="../images/logos/ieee_black.png"
               alt="IEEE Logo"
@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2 items-center">
             <h2 className="font-bold">Pages</h2>
             <div className="grid grid-cols-2 gap-x-8 gap-y-2">
               <Link to="/" className="hover:text-blue-600">
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
 
           {/* Social Media Links */}
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2 items-center">
             <h2 className="font-bold">Connect</h2>
             <div className="flex flex-col space-y-2">
               <a
@@ -93,7 +93,7 @@ export default function Footer() {
                 <FaFacebook className="text-xl" />
                 <span>Facebook</span>
               </a>
-              <a
+              {/* <a
                 href="https://www.linkedin.com/groups/14328043/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -101,7 +101,7 @@ export default function Footer() {
               >
                 <FaLinkedin className="text-xl" />
                 <span>LinkedIn</span>
-              </a>
+              </a> */}
               <a
                 href="https://github.com/ieee-wpi"
                 target="_blank"
