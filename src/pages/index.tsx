@@ -38,16 +38,29 @@ export default function HomePage() {
                   Events
                 </a>
               </div>
-
-              <div className="md:w-3/4 text-left">
-                <p className="text-lg mb-6">
-                  <p>Check our <a href="/events" className="underline hover:text-blue-600">events calendar</a> for upcoming events.</p>
-                  <br/><p>Here are some of our annual <strong>flagship events</strong>:</p>
-                </p>
-                  <FlagshipEventsCarousel />
-                </div>
+              <div className="w-full md:w-3/4 text-left">
+              <p className="text-lg md:text-lg mb-4 md:mb-6">
+              <span>
+              Check our{' '}
+                <a
+                  href="/events"
+                  className="underline hover:text-blue-600"
+                >
+                events calendar
+                </a>{' '}
+                for upcoming events.
+              </span>
+              <br />
+              <span>
+                Here are some of our annual <strong>flagship events</strong>:
+              </span>
+              </p>
+              <div>
+                <FlagshipEventsCarousel />
               </div>
-          </section>
+            </div>
+          </div>
+        </section>
 
           <section>
             <div className="flex flex-col md:flex-row items-start gap-8">
