@@ -40,7 +40,7 @@ export default function HomePage() {
               </div>
               <div className="w-full md:w-3/4 text-left">
               <p className="text-lg md:text-lg mb-4 md:mb-6">
-              <span>
+              </p>
               Check our{' '}
                 <a
                   href="/events"
@@ -49,12 +49,12 @@ export default function HomePage() {
                 events calendar
                 </a>{' '}
                 for upcoming events.
-              </span>
+                
               <br />
-              <span>
+              <p>
                 Here are some of our annual <strong>flagship events</strong>:
-              </span>
               </p>
+              
               <div>
                 <FlagshipEventsCarousel />
               </div>
