@@ -30,7 +30,7 @@ const HomeBanner: React.FC = () => {
 
       <div className="container-page h-full relative">
         <div className="absolute bottom-8 z-10 bg-black bg-opacity-15 rounded-lg">
-          <h1 className="text-lg md:text-2xl lg:text-3xl font-bold leading-tight backdrop-blur-sm rounded-lg">
+          <h1 className="text-lg md:text-2xl lg:text-3xl leading-tight backdrop-blur-sm rounded-lg">
             We organize engaging <br />
             <strong>technical, professional, and social</strong> <br />
             events at <strong>WPI</strong>.
@@ -90,10 +90,9 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
   return (
     <section className="relative h-[300px] w-full text-white">
       <StaticBanner />
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/70 to-transparent"></div>
       <div className="container-page h-full relative flex items-center">
-        <div className="z-10 bg-black bg-opacity-50 p-4 rounded backdrop-blur-sm w-min">
-          <h1 className="text-6xl font-bold tracking-wide">{title}</h1>
-        </div>
+          <h1 className="text-7xl font-bold tracking-wide">{title}</h1>
       </div>
     </section>
   );

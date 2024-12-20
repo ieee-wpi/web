@@ -4,14 +4,14 @@ import Footer from "../components/footer";
 import { StaticImage } from "gatsby-plugin-image";
 import Banner, { BannerType } from "../components/banner";
 import Layout from "../components/layout";
-import EventCard from "../components/event-card";
+import Description from "@/components/description";
+import FlagshipEventsCarousel from "@/components/flagship-events-carousel";
 
 export default function HomePage() {
   return (
     <Layout>
       <Banner type={BannerType.Home} />
-      <main className="container-page">
-        <div className="flex flex-col gap-20">
+      <main className="container-page flex flex-col gap-14">
           <section>
             <div className="flex flex-col md:flex-row items-start gap-8">
               <div className="md:w-1/4">
@@ -23,35 +23,7 @@ export default function HomePage() {
                 </a>
               </div>
               <div className="md:w-3/4">
-                <p className="text-lg">
-                  IEEE is the world’s largest technical professional
-                  organization dedicated to advancing technology for the benefit
-                  of humanity. IEEE and its members inspire a global community
-                  through its highly cited publications, conferences, technology
-                  standards, and professional and educational activities.
-                </p>
-                <p className="text-lg">
-                  <br /> Our student branch is focused on organizing engaging{" "}
-                  <strong>technical, professional, and social events</strong>{" "}
-                  for the WPI community, primarily for electronics and
-                  computing-related majors. Our members are passionate about
-                  technology and focused on cultivating an enriching student
-                  life for the WPI electronics and computing community.
-                </p>
-                <p className="text-lg">
-                  <br /> We have a student lounge in{" "}
-                  <a
-                    href="https://maps.app.goo.gl/H9d2DcqgULoDuDiM6"
-                    className="underline hover:text-blue-600"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    Atwater Kent Labs
-                  </a>{" "}
-                  with a microwave, fridge, coffee machine, and printer. We also have a variety of electronics and project materials in the lounge. We
-                  typically host weekly events, usually with free food, during
-                  the school year.
-                </p>
+                <Description />
               </div>
             </div>
           </section>
@@ -69,50 +41,12 @@ export default function HomePage() {
 
               <div className="md:w-3/4 text-left">
                 <p className="text-lg mb-6">
-                  <p>Check our <a href="/events" className="underline hover:text-blue-600">events calendar</a> for the latest events.</p>
+                  <p>Check our <a href="/events" className="underline hover:text-blue-600">events calendar</a> for upcoming events.</p>
                   <br/><p>Here are some of our annual <strong>flagship events</strong>:</p>
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <EventCard
-                    title="PCB Design Class"
-                    date="September"
-                    href="https://pcb.wpi.edu"
-                    imageComponent={
-                      <StaticImage
-                        src="../images/events/pcb-cover.png"
-                        alt="PCB Design Class"
-                        className="rounded-t"
-                      />
-                    }
-                  />
-
-                  <EventCard
-                    title="Spark Party"
-                    date="December"
-                    imageComponent={
-                      <StaticImage
-                        src="../images/events/spark-party-cover.png"
-                        alt="Spark Party"
-                        className="rounded-t"
-                      />
-                    }
-                  />
-
-                  <EventCard
-                    title="Networking Night"
-                    date="January"
-                    href="/networking"
-                    imageComponent={
-                      <StaticImage
-                        src="../images/events/networking-cover.png"
-                        alt="Networking Night"
-                        className="rounded-t"
-                      />
-                    }
-                  />
+                  <FlagshipEventsCarousel />
                 </div>
               </div>
-            </div>
           </section>
 
           <section>
@@ -153,7 +87,6 @@ export default function HomePage() {
               </div>
             </div>
           </section>
-        </div>
       </main>
     </Layout>
   );
