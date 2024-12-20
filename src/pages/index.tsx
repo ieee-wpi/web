@@ -55,6 +55,7 @@ export default function HomePage() {
                 Here are some of our annual <strong>flagship events</strong>:
               </p>
               </p>
+              
               <div>
                 <FlagshipEventsCarousel />
               </div>
