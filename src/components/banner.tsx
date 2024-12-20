@@ -18,19 +18,19 @@ const HomeBanner: React.FC = () => {
     <section className="relative h-[600px] w-full text-white">
       <div className="absolute inset-0 z-0">
         <StaticImage
-          src="../images/heroes/home_hero.JPG"
+          src="../images/heroes/home_hero.jpg"
           alt="Tesla coils on WPI's Quad"
           className="w-full h-full"
           loading="eager"
           objectFit="cover"
           objectPosition="center 70%"
         />
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black/80 to-transparent"></div>
       </div>
 
       <div className="container-page h-full relative">
-        <div className="absolute bottom-8 z-10 bg-black bg-opacity-15 rounded-lg">
-          <h1 className="text-lg md:text-2xl lg:text-3xl leading-tight backdrop-blur-sm rounded-lg">
+        <div className="absolute bottom-8 z-10 rounded-lg">
+          <h1 className="text-lg md:text-2xl lg:text-3xl leading-tight rounded-lg">
             We organize engaging <br />
             <strong>technical, professional, and social</strong> <br />
             events at <strong>WPI</strong>.
@@ -49,7 +49,7 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
       case "about":
         return (
           <StaticImage
-            src="../images/heroes/about_hero.png"
+            src="../images/heroes/about_hero.jpg"
             alt={`${title} Hero`}
             className="absolute inset-0 w-full h-full object-cover z-0 hero"
             loading="eager"
@@ -58,7 +58,7 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
       case "events":
         return (
           <StaticImage
-            src="../images/heroes/events_hero.png"
+            src="../images/heroes/events_hero.jpg"
             alt={`${title} Hero`}
             className="absolute inset-0 w-full h-full object-cover z-0 hero"
             loading="eager"
@@ -67,7 +67,7 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
       case "people":
         return (
           <StaticImage
-            src="../images/heroes/people_hero.png"
+            src="../images/heroes/people_hero.jpg"
             alt={`${title} Hero`}
             className="absolute inset-0 w-full h-full object-cover z-0 hero"
             loading="eager"
@@ -76,7 +76,7 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
       case "networking":
         return (
           <StaticImage
-          src="../images/heroes/networking_hero.jpg"
+          src="../images/events/networking.jpg"
           alt="Sparks Background"
           className="absolute inset-0 w-full h-full object-cover z-0 hero"
           loading = "eager"
@@ -90,9 +90,9 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
   return (
     <section className="relative h-[300px] w-full text-white">
       <StaticBanner />
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/70 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black/80 to-transparent"></div>
       <div className="container-page h-full relative flex items-center">
-          <h1 className="text-7xl font-bold tracking-wide">{title}</h1>
+          <h1 className="text-7xl font-bold tracking-wide mt-12">{title}</h1>
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export default function HomePage() {
               <div className="md:w-1/4">
                 <a
                   href="/about"
-                  className="text-3xl font-bold border-b-2 border-black inline-block hover:underline"
+                  className="text-3xl font-bold hover:underline hover:text-blue-600"
                 >
                   About
                 </a>
@@ -33,14 +33,14 @@ export default function HomePage() {
               <div className="md:w-1/4">
                 <a
                   href="/events"
-                  className="text-3xl font-bold border-b-2 border-black inline-block hover:underline"
+                  className="text-3xl font-bold hover:underline hover:text-blue-600"
                 >
                   Events
                 </a>
               </div>
               <div className="w-full md:w-3/4 text-left">
               <p className="text-lg md:text-lg mb-4 md:mb-6">
-              <span>
+              <p>
               Check our{' '}
                 <a
                   href="/events"
@@ -49,11 +49,11 @@ export default function HomePage() {
                 events calendar
                 </a>{' '}
                 for upcoming events.
-              </span>
-              <br />
-              <span>
+              </p>
+              <p>
+                <br />
                 Here are some of our annual <strong>flagship events</strong>:
-              </span>
+              </p>
               </p>
               <div>
                 <FlagshipEventsCarousel />
@@ -67,7 +67,7 @@ export default function HomePage() {
               <div className="md:w-1/4">
                 <a
                   href="/people"
-                  className="text-3xl font-bold border-b-2 border-black inline-block hover:underline"
+                  className="text-3xl font-bold hover:underline hover:text-blue-600"
                 >
                   People
                 </a>

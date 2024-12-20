@@ -1,11 +1,11 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import { graphql, useStaticQuery } from "gatsby";
 import { FaDownload } from "react-icons/fa";
 import Layout from "../components/layout";
 import Banner, { BannerType } from "../components/banner";
 import Description from "@/components/description";
 import ContentCard from "@/components/content-card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -18,17 +18,20 @@ export default function AboutPage() {
         <ContentCard title="Bylaws">
           <div className="flex flex-col items-center text-center">
             <p className="text-lg leading-relaxed mb-6 max-w-2xl">
-              View our student branch's bylaws.
+              View our branch bylaws.
             </p>
-            <a
-              href="https://github.com/ieee-wpi/policies"
-              download
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              title="Download Bylaws"
+            <Button
+              asChild
+              className="gap-2"
             >
-              <FaDownload className="w-5 h-5 mr-2" />
-              Download Bylaws
-            </a>
+              <a
+                href="https://github.com/ieee-wpi/policies"
+                download
+              >
+                <ExternalLink />
+                View Bylaws
+              </a>
+            </Button>
           </div>
         </ContentCard>
       </main>
