@@ -22,6 +22,8 @@ interface CalendarEvent {
   title: string;
   start: Date;
   end: Date;
+  location?: string;
+  time?: string;
 }
 
 export default function EventsPage() {
@@ -79,6 +81,23 @@ export default function EventsPage() {
                 style={{ height: "100%" }}
                 defaultView="month"
                 views={["month", "week", "day"]}
+                formats={{
+                  eventTimeRangeFormat: () => "", // Hide default time format
+                }}
+                components={{
+                  event: (props) => {
+                    const event = props.event as CalendarEvent;
+                    return (
+                      <div className="p-1">
+                        <div className="font-semibold">{event.title}</div>
+                        <div className="text-sm">
+                          {event.time && event.location ? `${event.time} · ${event.location}` : 
+                           event.time || event.location || ''}
+                        </div>
+                      </div>
+                    );
+                  }
+                }}
               />
             </div>
           )}

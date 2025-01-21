@@ -6,7 +6,8 @@ export enum BannerType {
   About = "About",
   Events = "Events",
   People = "People",
-  Networking = "Networking"
+  Networking = "Networking",
+  NotFound = "404"
 }
 
 interface BannerProps {
@@ -30,7 +31,7 @@ const HomeBanner: React.FC = () => {
 
       <div className="container-page h-full relative">
         <div className="absolute bottom-8 z-10 rounded-lg">
-          <h1 className="text-lg md:text-2xl lg:text-3xl leading-tight rounded-lg">
+          <h1 className="text-2xl lg:text-3xl leading-tight rounded-lg">
             We organize engaging <br />
             <strong>technical, professional, and social</strong> <br />
             events at <strong>WPI</strong>.
@@ -83,7 +84,14 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
         />
         )
       default:
-        return null;
+        return (
+          <StaticImage
+            src="../images/heroes/about_hero.jpg"
+            alt={`${title} Hero`}
+            className="absolute inset-0 w-full h-full object-cover z-0 hero"
+            loading="eager"
+          />
+        );
     }
   };
 
@@ -92,7 +100,7 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
       <StaticBanner />
       <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black/80 to-transparent"></div>
       <div className="container-page h-full relative flex items-center">
-          <h1 className="text-7xl font-bold tracking-wide mt-12">{title}</h1>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide mt-12">{title}</h1>
       </div>
     </section>
   );
