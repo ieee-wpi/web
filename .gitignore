@@ -3,5 +3,9 @@
 .idea/
 node_modules/
 .cache/
-public
 src/gatsby-types.d.ts
+public/*
+!public/data/
+!public/icons/
+!public/manifest.webmanifest
+!public/favicon-32x32.png
