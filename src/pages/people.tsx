@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { IGatsbyImageData } from "gatsby-plugin-image";
+import { IGatsbyImageData, StaticImage } from "gatsby-plugin-image";
 import Layout from "@/components/layout";
 import Banner, { BannerType } from "@/components/banner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -50,15 +50,28 @@ export default function PeoplePage({ data }: PeoplePageProps) {
       <Banner type={BannerType.People} />
       <main className="container-page">
         <ContentCard title="2024-2025 Officer Board">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {officers.map((officer, idx) => (
-              <OfficerProfile
-                key={idx}
-                name={officer.name}
-                position={officer.position}
-                image={officer.image}
-              />
-            ))}
+          <div className="flex flex-col space-y-8">
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
+                <StaticImage
+                  src="../images/people/board.jpg"
+                  alt="2024-2025 Officer Board"
+                  className="w-full hover:scale-102 transition-transform duration-500"
+                  loading="eager"
+                />
+              </div>
+            </div>
+            <Separator className="bg-slate-200" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {officers.map((officer, idx) => (
+                <OfficerProfile
+                  key={idx}
+                  name={officer.name}
+                  position={officer.position}
+                  image={officer.image}
+                />
+              ))}
+            </div>
           </div>
         </ContentCard>
         <div className="mt-12">

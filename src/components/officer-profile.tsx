@@ -20,7 +20,7 @@ export function OfficerProfile({ name, position, image }: OfficerProfileProps) {
         />
       </div>
       <h3 className="text-xl font-bold">{name}</h3>
-      <h3 className="text-lg font-light">{position}</h3>
+      <h3 className="text-lg font-light text-gray-600">{position}</h3>
     </div>
   );
 }
