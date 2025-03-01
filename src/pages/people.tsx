@@ -23,15 +23,15 @@ interface PeoplePageProps {
 }
 
 const officerData = [
-  { name: "Daniel Gorbunov", position: "President", imageName: "daniel" },
-  { name: "Hubert Liu", position: "Vice President", imageName: "hubert" },
-  { name: "Ryan Ranjitkar", position: "Secretary", imageName: "ryan" },
-  { name: "George Shi", position: "Treasurer", imageName: "george" },
-  { name: "Jack Kamataris", position: "Events Officer", imageName: "jack" },
-  { name: "Todd Petry", position: "Events Officer", imageName: "todd" },
+  { name: "Jack Kamataris", position: "President", imageName: "jack" },
+  { name: "Daniel Gorbunov", position: "Vice President", imageName: "daniel" },
+  { name: "Stephanie Lee", position: "Secretary", imageName: "stephanie_lee" },
+  { name: "Dhruv Madan", position: "Treasurer", imageName: "dhruv" },
+  { name: "Ben Santana", position: "Events Officer", imageName: "ben_santana" },
+  { name: "Mary Schwedatschenko ", position: "Events Officer", imageName: "Mary_s" },
   { name: "Brendon Peters", position: "Public Relations Chair", imageName: "brendon" },
-  { name: "Will Buchta", position: "Projects Chair", imageName: "will" },
-  { name: "Artem Frenk", position: "Web Chair", imageName: "artem" },
+  { name: "William Sobral", position: "Projects Chair", imageName: "who" },
+  { name: "Samuel Goldsmith", position: "Web Chair", imageName: "Sam_Goldsmith" },
 ];
 
 export default function PeoplePage({ data }: PeoplePageProps) {
@@ -49,7 +49,7 @@ export default function PeoplePage({ data }: PeoplePageProps) {
     <Layout>
       <Banner type={BannerType.People} />
       <main className="container-page">
-        <ContentCard title="2024-2025 Officer Board">
+        <ContentCard title="2025-2026 Officer Board">
           <div className="flex flex-col space-y-8">
             <div className="flex justify-center">
               <div className="relative w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
