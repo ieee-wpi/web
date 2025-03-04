@@ -28,6 +28,7 @@ export default function AboutPage() {
             >
               <a 
                 href="https://www.givecampus.com/campaigns/40435/donations/new?designation=instituteofelectricalandelectronicsengineers&a=9699234"
+                rel="noopener noreferrer"
               >
                 Donate Here!
               </a>
