@@ -83,7 +83,7 @@ export default function HomePage() {
                   />
                 </div> */}
                 <p className="text-lg">
-                  We have over 150 general members in our branch, primarily
+                  We have over 200 general members in our branch, primarily
                   students majoring in <strong>ECE, CS, and RBE</strong>.
                 </p>
                 <br/><p className="text-lg">
