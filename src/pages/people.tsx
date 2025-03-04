@@ -30,7 +30,7 @@ const officerData = [
   { name: "Ben Santana", position: "Events Officer", imageName: "ben_santana" },
   { name: "Mary Schwedatschenko ", position: "Events Officer", imageName: "Mary_s" },
   { name: "Brendon Peters", position: "Public Relations Chair", imageName: "brendon" },
-  { name: "William Sobral", position: "Projects Chair", imageName: "who" },
+  { name: "William Sobral", position: "Projects Chair", imageName: "will_sobral" },
   { name: "Samuel Goldsmith", position: "Web Chair", imageName: "Sam_Goldsmith" },
 ];
 

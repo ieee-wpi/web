@@ -93,15 +93,15 @@ export default function Footer() {
                 <FaFacebook className="text-xl" />
                 <span>Facebook</span>
               </a>
-              {/* <a
-                href="https://www.linkedin.com/groups/14328043/"
+              <a
+                href="https://www.linkedin.com/groups/13180757/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 hover:text-blue-600 hover:underline"
               >
                 <FaLinkedin className="text-xl" />
                 <span>LinkedIn</span>
-              </a> */}
+              </a> 
               <a
                 href="https://github.com/ieee-wpi"
                 target="_blank"
