@@ -15,7 +15,7 @@ export default function AboutPage() {
         <section>
           <Description />
         </section>
-        {/* <ContentCard title="Donate"> TODO: Discuss and decide if we want to keep this
+        <ContentCard title="Donate"> {/* TODO: Discuss and decide if we want to keep this */}
           <div className="flex flex-col items-center text-center">
             <h2 className="text-xl leading-relaxed mb-6 max-w-2xl">
             Support our student branch in hosting exciting and impactful events!
@@ -33,7 +33,7 @@ export default function AboutPage() {
               </a>
             </Button>
           </div>
-          </ContentCard> */}
+          </ContentCard>
         <ContentCard title="Bylaws">
           <div className="flex flex-col items-center text-center">
             <p className="text-lg leading-relaxed mb-6 max-w-2xl">
