@@ -42,10 +42,52 @@
     "location": "SL 104"
   },
   {
-    "title": "Study Night",
-    "start": "2025-03-04T00:00:00",
-    "end": "2025-03-04T23:59:59",
+    "title": "Open Exec Meeting",
+    "start": "2025-03-10T00:00:00",
+    "end": "2025-03-10T23:59:59",
+    "time": "5:00 PM",
+    "location": "Lounge"
+  },
+  {
+    "title": "Open Exec Meeting",
+    "start": "2025-03-17T00:00:00",
+    "end": "2025-03-17T23:59:59",
+    "time": "5:00 PM",
+    "location": "Lounge"
+  },
+  {
+    "title": "Open Exec Meeting",
+    "start": "2025-03-24T00:00:00",
+    "end": "2025-03-24T23:59:59",
+    "time": "5:00 PM",
+    "location": "Lounge"
+  },
+  {
+    "title": "Open Exec Meeting",
+    "start": "2025-03-31T00:00:00",
+    "end": "2025-03-31T23:59:59",
+    "time": "5:00 PM",
+    "location": "Lounge"
+  },
+  {
+    "title": "Resume Review",
+    "start": "2025-03-25T00:00:00",
+    "end": "2025-03-25T23:59:59",
     "time": "5:00 PM",
     "location": "SL 104"
+  },
+  {
+    "title": "Course Planning",
+    "start": "2025-03-18T00:00:00",
+    "end": "2025-03-18T23:59:59",
+    "time": "5:00 PM",
+    "location": "AK 116"
+  },
+  {
+    "title": "Trivia Night",
+    "start": "2025-04-08T00:00:00",
+    "end": "2025-04-08T23:59:59",
+    "time": "5:00 PM",
+    "location": "Fuller Lower"
   }
 ]
