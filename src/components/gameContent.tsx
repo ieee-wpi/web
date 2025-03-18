@@ -9,6 +9,8 @@ export interface GameContextType {
   onEnter: () => void;
   onSelectLetter: (letter: string) => void;
   goalWord: string;
+  boardCols: number[][];
+  setBoardCols: React.Dispatch<React.SetStateAction<number[][]>>;
 }
 
 // Create the context with a default value of null
