@@ -54,6 +54,9 @@ export default function Navbar() {
           <Link to="/alumni" className="hover:underline">
             Alumni
           </Link>
+          <Link to="/games" className="hover:underline">
+            Games
+          </Link>
           <a
             href="https://mywpi.wpi.edu/ieee/club_signup"
             target="_blank"
@@ -92,6 +95,9 @@ export default function Navbar() {
           </Link>
           <Link to="/alumni" className="hover:underline">
             Alumni
+          </Link>
+          <Link to="/games" className="hover:underline">
+            Games
           </Link>
           <a
             href="https://mywpi.wpi.edu/ieee/club_signup"
