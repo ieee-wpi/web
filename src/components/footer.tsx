@@ -61,6 +61,14 @@ export default function Footer() {
               >
                 IEEE
               </a>
+              <a
+                href="https://www.ieee.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600 hover:underline col-span-2 text-center"
+              >
+                Donate
+              </a>
             </div>
           </div>
 

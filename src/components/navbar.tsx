@@ -51,6 +51,9 @@ export default function Navbar() {
           <Link to="/people" className="hover:underline">
             People
           </Link>
+          <Link to="/alumni" className="hover:underline">
+            Alumni
+          </Link>
           <a
             href="https://mywpi.wpi.edu/ieee/club_signup"
             target="_blank"
@@ -59,14 +62,6 @@ export default function Navbar() {
           >
             Join
           </a>
-          {/* <a TODO: Discuss and decide if we want to keep this
-            href = "https://www.givecampus.com/campaigns/40435/donations/new?designation=instituteofelectricalandelectronicsengineers&a=9699234" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-            >
-            Donate
-          </a> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -95,6 +90,9 @@ export default function Navbar() {
           <Link to="/people" className="hover:underline">
             People
           </Link>
+          <Link to="/alumni" className="hover:underline">
+            Alumni
+          </Link>
           <a
             href="https://mywpi.wpi.edu/ieee/club_signup"
             target="_blank"
@@ -103,14 +101,6 @@ export default function Navbar() {
           >
             Join
           </a>
-          {/* <a TODO: Discuss and decide if we want to keep this
-            href = "https://www.givecampus.com/campaigns/40435/donations/new?designation=instituteofelectricalandelectronicsengineers&a=9699234" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-            >
-            Donate
-          </a> */}
         </div>
       </div>
     </nav>

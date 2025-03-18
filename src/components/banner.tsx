@@ -6,6 +6,7 @@ export enum BannerType {
   About = "About",
   Events = "Events",
   People = "People",
+  Alumni = "Alumni",
   Networking = "Networking",
   NotFound = "404"
 }
@@ -75,6 +76,15 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
           />
         );
       case "networking":
+        return (
+          <StaticImage
+          src="../images/events/networking.jpg"
+          alt="Sparks Background"
+          className="absolute inset-0 w-full h-full object-cover z-0 hero"
+          loading = "eager"
+        />
+        )
+        case "alumni":
         return (
           <StaticImage
           src="../images/events/networking.jpg"
