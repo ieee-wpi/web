@@ -19,10 +19,21 @@ export default function GamesPage() {
   const [board, setBoard] = useState(boardBlank);
   const [boardCols, setBoardCols] = useState(boardZeros);
   const [attempt, setAttempt] = useState({row:0, position: 0});
-  // let i = Math.floor(Math.random() *pool.length);
-  // const goalWord = pool[i];
-  // console.log(goalWord);
-  const goalWord = "HELLO";
+  const [goalWord, setGoalWord] = useState("");
+
+  useEffect(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const timestamp = today.getTime();
+    const daysSinceEpoch = Math.floor(timestamp / (1000 * 60 * 60 * 24));
+    const randomIndex = daysSinceEpoch % pool.length;
+
+    const dailyWord = pool[randomIndex].toUpperCase();
+    setGoalWord(dailyWord);
+    
+    console.log("Today's word:", dailyWord); 
+  }, []);
+
   const isWord = () => {return dictionary.includes(board[attempt.row].join("").toLowerCase()) || pool.includes(board[attempt.row].join("").toLowerCase())}
   const checkRow =() => {
     let newCols = [...boardCols]; 
