@@ -61,11 +61,14 @@ export default function Footer() {
               >
                 IEEE
               </a>
+              <Link to="/alumni" className="hover:text-blue-600 hover:underline">
+                Alumni
+              </Link>
               <a
-                href="https://www.ieee.org"
+                href="https://www.givecampus.com/campaigns/40435/donations/new?designation=instituteofelectricalandelectronicsengineers&a=9699234"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-600 hover:underline col-span-2 text-center"
+                className="hover:text-blue-600 hover:underline"
               >
                 Donate
               </a>
