@@ -19,10 +19,14 @@ export default function GamesPage() {
   const [board, setBoard] = useState(boardBlank);
   const [boardCols, setBoardCols] = useState(boardZeros);
   const [attempt, setAttempt] = useState({row:0, position: 0});
-  // let i = Math.floor(Math.random() *pool.length);
-  // const goalWord = pool[i];
-  // console.log(goalWord);
-  const goalWord = "HELLO";
+  const [goalWord, setGoalWord] = useState("");
+
+  if(goalWord == ""){
+    let i = Math.floor(Math.random() *pool.length);
+    setGoalWord(pool[i]);
+  }
+  console.log(goalWord);
+  // const goalWord = "HELLO";
   const isWord = () => {return dictionary.includes(board[attempt.row].join("").toLowerCase()) || pool.includes(board[attempt.row].join("").toLowerCase())}
   const checkRow =() => {
     let newCols = [...boardCols]; 
