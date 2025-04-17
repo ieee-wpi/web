@@ -2,7 +2,7 @@
 
 SESSION_NAME="prod"
 DEPLOY_CMD="npm run deploy"
-WEBSITE_URL="https://ieee-dev.wpi.edu"
+WEBSITE_URL="http://ieee-dev.wpi.edu"
 
 # Kill tmux sessions (proceed even if command fails)
 tmux kill-server || true
