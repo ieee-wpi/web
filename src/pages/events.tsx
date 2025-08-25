@@ -66,8 +66,9 @@ export default function EventsPage() {
       <main className="container-page">
         <p className="text-xl mb-12">
           We typically host weekly events, usually with free food, during the school year. We also run several annual{" "}
-            <strong>flagship events</strong>.
+            flagship events.
         </p>
+        <p className="text-xl mb-12 font-bold">Open Exec meetings are held every Thursday at 7:00 pm in the IEEE lounge</p>
         <ContentCard title="Upcoming Events">
           {error ? (
             <p className="text-red-500">{error}</p>
