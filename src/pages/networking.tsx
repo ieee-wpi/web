@@ -54,13 +54,12 @@ export default function NetworkingPage() {
             <h2 className="mb-2 text-lg font-bold">WPI Students:</h2>
             <p className="text-lg mb-6">
               <a 
-                href="#"
+                href="https://mywpi.wpi.edu/ieee/rsvp_boot?id=400952"
                 className="text-blue-600 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              {/* Student Registration Form */}
-              Registration form will be available soon!
+              Student Registration Form
               </a>
               <br />
               <p className="mt-2 italic">Please note that seats for this event are limited. Registrations will be confirmed on a first-come, first-served basis. If the event reaches capacity before the form is closed, your registration may not be valid, and you will be notified accordingly. We recommend registering early to secure your spot.</p>
