@@ -19,7 +19,21 @@ interface OfficerBoard {
 }
 
 const officerBoards: OfficerBoard[] = [
-  {
+    {
+      year: '2025',
+      officers: [
+        { name: "Jack Kamataris", position: "President"},
+        { name: "Daniel Gorbunov", position: "Vice President"},
+        { name: "Stephanie Lee", position: "Secretary"},
+        { name: "Dhruv Madan", position: "Treasurer"},
+        { name: "Ben Santana", position: "Events Officer"},
+        { name: "Mary Schwedatschenko ", position: "Events Officer"},
+        { name: "Brendon Peters", position: "Public Relations Chair"},
+        { name: "William Sobral", position: "Projects Chair"},
+        { name: "Samuel Goldsmith", position: "Web Chair"},
+      ],
+    },
+    {
     year: '2024',
     officers: [
       { position: 'President', name: 'Daniel Gorbunov' },
