@@ -26,7 +26,7 @@ const officerData = [
   { name: "Brendon Peters", position: "Vice President", imageName: "brendon" },
   { name: "Will Keller", position: "Secretary", imageName: "will" },
   { name: "Dhruv Madan", position: "Treasurer", imageName: "dhruv"},
-  { name: "Shriya Sudharshan", position: "Public Relations Chair", imageName: "who"},
+  { name: "Shriya Sudharshan", position: "Public Relations Chair", imageName: "shriya"},
   { name: "Leo Shraybman", position: "Projects Chair", imageName: "leo"},
   { name: "Samuel Goldsmith", position: "Web Chair", imageName: "sam"},
 ];
