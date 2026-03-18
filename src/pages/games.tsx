@@ -33,7 +33,7 @@ useEffect(() => {
     const dText = await dRes.text()
     const dAdd = dText.split("\n").map(r => r.trim())
 
-    setDictionary([...dBase, ...dAdd])
+    setDictionary([...dBase, ...dAdd, ...parsedPool])
 
     const today = new Date();
     today.setHours(0, 0, 0, 0)
