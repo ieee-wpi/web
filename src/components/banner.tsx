@@ -8,6 +8,7 @@ export enum BannerType {
   People = "People",
   Alumni = "Alumni",
   Networking = "Networking",
+  Wordle = "Wordle",
   NotFound = "404"
 }
 
@@ -78,21 +79,29 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
       case "networking":
         return (
           <StaticImage
-          src="../images/events/networking.jpg"
-          alt="Sparks Background"
-          className="absolute inset-0 w-full h-full object-cover z-0 hero"
-          loading = "eager"
-        />
+            src="../images/events/networking.jpg"
+            alt="Sparks Background"
+            className="absolute inset-0 w-full h-full object-cover z-0 hero"
+            loading="eager"
+          />
         )
-        case "alumni":
+      case "alumni":
         return (
           <StaticImage
-          src="../images/events/networking.jpg"
-          alt="Sparks Background"
-          className="absolute inset-0 w-full h-full object-cover z-0 hero"
-          loading = "eager"
-        />
+            src="../images/events/networking.jpg"
+            alt="Sparks Background"
+            className="absolute inset-0 w-full h-full object-cover z-0 hero"
+            loading="eager"
+          />
         )
+      case "wordle":
+        return (
+          <StaticImage
+            src="../images/heroes/wordle_hero.jpg"
+            alt="Sparks Background"
+            className="absolute inset-0 w-full h-full object-cover z-0 hero"
+            loading="eager"
+          />)
       default:
         return (
           <StaticImage
@@ -110,7 +119,7 @@ const PageBanner = ({ image, title }: { image: string; title: string }) => {
       <StaticBanner />
       <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black/80 to-transparent"></div>
       <div className="container-page h-full relative flex items-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide mt-12">{title}</h1>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide mt-12">{title}</h1>
       </div>
     </section>
   );
