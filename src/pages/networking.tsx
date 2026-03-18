@@ -9,11 +9,11 @@ export default function NetworkingPage() {
     <Layout>
       <Banner type={BannerType.Networking} />
       <main className="container-page flex flex-col gap-14">
-        <ContentCard title="IEEE WPI Networking Night 2025">
+        <ContentCard title="IEEE WPI Networking Night 2026">
           <div className="space-y-4 mb-8">
             <div className="flex items-center space-x-4">
               <p className="font-semibold">📅 Date:</p>
-              <p>Tuesday, January 28, 2025</p>
+              <p>Tuesday, January 27, 2026</p>
             </div>
             <div className="flex items-center space-x-4">
               <p className="font-semibold">⏰ Time:</p>
@@ -30,7 +30,7 @@ export default function NetworkingPage() {
           </div>
           <div className="text-lg space-y-4">
               <p>
-                The event provides companies a unique opportunity for highly motivated, talented, technical WPI students to connect with companies over a catered dinner. WPI students are known for their strong technical foundation and hands-on project experience. In the past, we have filled all seats at this event! This year, we expect approximately 120 students to attend.
+                The event provides companies a unique opportunity for highly motivated, talented, technical WPI students to connect with companies over a catered dinner. WPI students are known for their strong technical foundation and hands-on project experience. In the past, we have filled all seats at this event!
               </p>
               
               <p>
@@ -54,7 +54,7 @@ export default function NetworkingPage() {
             <h2 className="mb-2 text-lg font-bold">WPI Students:</h2>
             <p className="text-lg mb-6">
               <a 
-                href="https://forms.gle/fpM66i3EqdiNPb7p6"
+                href="https://mywpi.wpi.edu/ieee/rsvp_boot?id=400952"
                 className="text-blue-600 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -65,14 +65,15 @@ export default function NetworkingPage() {
               <p className="mt-2 italic">Please note that seats for this event are limited. Registrations will be confirmed on a first-come, first-served basis. If the event reaches capacity before the form is closed, your registration may not be valid, and you will be notified accordingly. We recommend registering early to secure your spot.</p>
             </p>
             <h2 className="mb-2 text-lg font-bold">Companies:</h2>    
-            <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLScME1ZGQLioR6v_uNeynkOi0cM-dNDoCzRn_S3ZxkjerRyuwg/viewform"
-              className="text-blue-600 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Company Registration Form
-            </a>
+            <a
+                  href="mailto:gr-ieee-exec@wpi.edu"
+                  className="text-blue-600 hover:underline"
+                >
+                  gr-ieee-exec@wpi.edu
+                </a>
+                <br/>
+                Company Registration, please email us at the address above.
+            
           </p>
           </ContentCard>
 
@@ -97,7 +98,7 @@ export default function NetworkingPage() {
           </ContentCard>
         </div>
 
-        <ContentCard title="Participating Companies">
+        <ContentCard title="Last Year's Participating Companies">
           <div className="space-y-8 p-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-items-center">
               <div className="w-40 md:w-40 h-24 flex items-center justify-center">

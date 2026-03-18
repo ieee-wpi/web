@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import { IGatsbyImageData, StaticImage } from "gatsby-plugin-image";
 import Layout from "@/components/layout";
 import Banner, { BannerType } from "@/components/banner";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { OfficerProfile, OfficerProfileProps } from "@/components/officer-profile"
 import { Separator } from "@/components/ui/separator";
 import PastOfficers from "@/components/past-officers";
@@ -23,15 +22,13 @@ interface PeoplePageProps {
 }
 
 const officerData = [
-  { name: "Jack Kamataris", position: "President", imageName: "jack" },
-  { name: "Daniel Gorbunov", position: "Vice President", imageName: "daniel" },
-  { name: "Stephanie Lee", position: "Secretary", imageName: "stephanie_lee" },
-  { name: "Dhruv Madan", position: "Treasurer", imageName: "dhruv" },
-  { name: "Ben Santana", position: "Events Officer", imageName: "ben_santana" },
-  { name: "Mary Schwedatschenko ", position: "Events Officer", imageName: "Mary_s" },
-  { name: "Brendon Peters", position: "Public Relations Chair", imageName: "brendon" },
-  { name: "William Sobral", position: "Projects Chair", imageName: "will_sobral" },
-  { name: "Samuel Goldsmith", position: "Web Chair", imageName: "Sam_Goldsmith" },
+  { name: "Mary Schwedatschenko", position: "President", imageName: "mary" },
+  { name: "Brendon Peters", position: "Vice President", imageName: "brendon" },
+  { name: "Will Keller", position: "Secretary", imageName: "will" },
+  { name: "Dhruv Madan", position: "Treasurer", imageName: "dhruv"},
+  { name: "Shriya Sudharshan", position: "Public Relations Chair", imageName: "shriya"},
+  { name: "Leo Shraybman", position: "Projects Chair", imageName: "leo"},
+  { name: "Samuel Goldsmith", position: "Web Chair", imageName: "sam"},
 ];
 
 export default function PeoplePage({ data }: PeoplePageProps) {
@@ -49,7 +46,7 @@ export default function PeoplePage({ data }: PeoplePageProps) {
     <Layout>
       <Banner type={BannerType.People} />
       <main className="container-page">
-        <ContentCard title="2025-2026 Officer Board">
+        <ContentCard title="2026 Officer Board">
           <div className="flex flex-col space-y-8">
             <div className="flex justify-center">
               <div className="relative w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
