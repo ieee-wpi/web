@@ -1,16 +1,37 @@
 [
   {
-    "title": "Social Event",
-    "start": "2025-01-21T17:00:00",
-    "end": "2025-01-21T18:30:00",
+    "title": "Course Selection Workshop",
+    "start": "2026-03-25T17:00:00",
+    "end": "2026-03-25T18:30:00",
     "time": "5:00 PM",
-    "location": "SL 104"
+    "location": "AK 116"
   },
   {
-    "title": "SPARK PARTY!!!",
-    "start": "2025-12-05T17:30:00",
-    "end": "2025-12-05T19:00:00",
-    "time": "7:00 PM",
+    "title": "Perfboard Workshop",
+    "start": "2026-04-01T17:00:00",
+    "end": "2026-04-01T18:30:00",
+    "time": "5:00 PM",
+    "location": "AK 227"
+  },
+  {
+    "title": "Financial Workshop",
+    "start": "2026-04-08T17:30:00",
+    "end": "2026-04-08T19:00:00",
+    "time": "3:30 PM",
     "location": "AK 116"
+  },
+    {
+    "title": "Marvell Panel",
+    "start": "2026-04-15T17:30:00",
+    "end": "2026-04-15T19:00:00",
+    "time": "6:00 PM",
+    "location": "AK 116"
+  },
+  {
+    "title": "Alumni BBQ",
+    "start": "2026-04-29T17:30:00",
+    "end": "2026-04-29T19:00:00",
+    "time": "TBA",
+    "location": "TBA"
   }
 ]
