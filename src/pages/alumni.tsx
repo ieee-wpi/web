@@ -12,10 +12,10 @@ export default function AlumniPage() {
       <Banner type={BannerType.Alumni} />
       <main className="container-page flex flex-col gap-14">
         <section>
-        <p className="text-lg">
-            Welcome to the IEEE WPI Chapter's alumni page! We deeply value our alumni connections and encourage you to stay engaged by following us on social media.  
-            If you're interested in hosting an event with the chapter, don't hesitate to reach out—we frequently organize Q&A panels and networking nights with alumni companies.  
-            Stay tuned for open and alumni-exclusive events like Spark Party and our annual alumni barbecue.  
+        <p className="text-lg leading-relaxed max-w-3xl">
+            Welcome to the IEEE WPI Chapter's alumni page! We deeply value our alumni connections and encourage you to stay engaged by following us on social media.
+            If you're interested in hosting an event with the chapter, don't hesitate to reach out—we frequently organize Q&A panels and networking nights with alumni companies.
+            Stay tuned for open and alumni-exclusive events like Spark Party and our annual alumni barbecue.
             For any questions or inquiries, please{" "}
             <a
                 href="mailto:gr-ieee-exec@wpi.edu"

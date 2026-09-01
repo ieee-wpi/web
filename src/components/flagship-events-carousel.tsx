@@ -9,7 +9,7 @@ import { type EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-const events: EventType[] = ["pcb", "spark", "networking", "hackathon", "pcb", "spark", "networking", "hackathon"];
+const events: EventType[] = ["pcb", "spark", "networking", "pcb", "spark", "networking", "hackathon"];
 
 interface FlagshipEventsCarouselProps {
   className?: string;

@@ -17,7 +17,7 @@ const eventData = {
     image: (
       <StaticImage
         src="../images/events/pcb.jpg"
-        alt="PCB Design Competition"
+        alt="PCB Design Class"
         className="rounded-t-lg"
         placeholder="blurred"
         aspectRatio={16/9}

@@ -28,11 +28,11 @@ export default function NetworkingPage() {
               <p>Computer Science, Electrical and Computer Engineering, and Robotics Engineering WPI students</p>
             </div>
           </div>
-          <div className="text-lg space-y-4">
+          <div className="text-lg leading-relaxed space-y-4 max-w-3xl">
               <p>
                 The event provides companies a unique opportunity for highly motivated, talented, technical WPI students to connect with companies over a catered dinner. WPI students are known for their strong technical foundation and hands-on project experience. In the past, we have filled all seats at this event!
               </p>
-              
+
               <p>
                 The event is completely <span className="font-bold">free</span> for companies and students.  If you have any questions, please contact us at{" "}
                 <a
@@ -43,9 +43,6 @@ export default function NetworkingPage() {
                 </a>.
               </p>
             </div>
-          <p className="text-lg">
-
-          </p>
         </ContentCard>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
@@ -62,7 +59,7 @@ export default function NetworkingPage() {
               Student Registration Form
               </a>
               <br />
-              <p className="mt-2 italic">Please note that seats for this event are limited. Registrations will be confirmed on a first-come, first-served basis. If the event reaches capacity before the form is closed, your registration may not be valid, and you will be notified accordingly. We recommend registering early to secure your spot.</p>
+              <p className="mt-2 italic leading-relaxed">Please note that seats for this event are limited. Registrations will be confirmed on a first-come, first-served basis. If the event reaches capacity before the form is closed, your registration may not be valid, and you will be notified accordingly. We recommend registering early to secure your spot.</p>
             </p>
             <h2 className="mb-2 text-lg font-bold">Companies:</h2>    
             <a
@@ -84,15 +81,15 @@ export default function NetworkingPage() {
               </li> */}
               <li>
                 <strong className="font-semibold">6:00 PM - 6:30 PM: Dinner and Networking</strong>{" "}
-                <p>Students and employers connect over a catered dinner. Students will be seated by major, allowing companies and students to best connect.</p>
+                <p className="leading-relaxed mt-1">Students and employers connect over a catered dinner. Students will be seated by major, allowing companies and students to best connect.</p>
               </li>
               <li>
                 <strong className="font-semibold">6:30 PM - 7:00 PM: Presentations</strong>{" "}
-                <p>Each company will have 3-5 minutes to present a brief slideshow about their company and share information about available opportunities for students.</p>
+                <p className="leading-relaxed mt-1">Each company will have 3-5 minutes to present a brief slideshow about their company and share information about available opportunities for students.</p>
               </li>
               <li>
                 <strong className="font-semibold">7:00 PM - 8:00 PM: Career Fair</strong>{" "}
-                <p>We will open into a career fair format. Companies will attend to their booths, and students will have a chance to speak one on one with companies they're interested in.</p>
+                <p className="leading-relaxed mt-1">We will open into a career fair format. Companies will attend to their booths, and students will have a chance to speak one on one with companies they're interested in.</p>
               </li>
             </ul>
           </ContentCard>

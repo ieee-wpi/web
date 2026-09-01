@@ -38,28 +38,24 @@ export default function HomePage() {
                   Events
                 </a>
               </div>
-              <div className="w-full md:w-3/4 text-left">
-              <p className="text-lg md:text-lg mb-4 md:mb-6">
-              <p>
-              Check our{' '}
-                <a
-                  href="/events"
-                  className="underline hover:text-blue-600"
-                >
-                events calendar
-                </a>{' '}
-                for upcoming events.
-              </p>
-              <p>
-                <br />
-                Here are some of our annual <strong>flagship events</strong>:
-              </p>
-              </p>
-              
-              <div>
-                <FlagshipEventsCarousel />
+              <div className="w-full md:w-3/4 text-left flex flex-col gap-4">
+                <p className="text-lg leading-relaxed">
+                  Check our{" "}
+                  <a
+                    href="/events"
+                    className="underline hover:text-blue-600"
+                  >
+                    events calendar
+                  </a>{" "}
+                  for upcoming events.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  Here are some of our annual <strong>flagship events</strong>:
+                </p>
+                <div>
+                  <FlagshipEventsCarousel />
+                </div>
               </div>
-            </div>
           </div>
         </section>
 
@@ -82,22 +78,24 @@ export default function HomePage() {
                     className="rounded shadow-lg"
                   />
                 </div> */}
-                <p className="text-lg">
-                  We have over 200 general members in our branch, primarily
-                  students majoring in <strong>ECE, CS, and RBE</strong>.
-                </p>
-                <br/><p className="text-lg">
-                  Are you a WPI student interested in joining? Click{" "}
-                  <a
-                    href="https://mywpi.wpi.edu/IEEE/club_signup"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="underline hover:text-blue-600"
-                  >
-                    here
-                  </a>{" "}
-                  to join.
-                </p>
+                <div className="flex flex-col gap-4">
+                  <p className="text-lg leading-relaxed">
+                    We have over <span className="font-bold">500</span> general members in our branch, primarily
+                    students majoring in <strong>ECE, CS, and RBE</strong>!
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    Are you a WPI student interested in joining? Click{" "}
+                    <a
+                      href="https://mywpi.wpi.edu/IEEE/club_signup"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="underline hover:text-blue-600"
+                    >
+                      here
+                    </a>{" "}
+                    to join.
+                  </p>
+                </div>
               </div>
             </div>
           </section>

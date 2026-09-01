@@ -64,11 +64,11 @@ export default function EventsPage() {
     <Layout>
       <Banner type={BannerType.Events} />
       <main className="container-page">
-        <p className="text-xl mb-12">
+        <p className="text-xl leading-relaxed mb-12 max-w-3xl">
           We typically host weekly events, usually with free food, during the school year. We also run several annual{" "}
             flagship events.
         </p>
-        <p className="text-xl mb-12 font-bold">Open Exec meetings are held every Thursday at 7:00 pm in the IEEE lounge</p>
+        <p className="text-xl leading-relaxed mb-12 font-bold max-w-3xl">Open Exec meetings are held every Wednesday at 5:00 pm in the IEEE lounge</p>
         <ContentCard title="Upcoming Events">
           {error ? (
             <p className="text-red-500">{error}</p>
