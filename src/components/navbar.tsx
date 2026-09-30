@@ -1,7 +1,11 @@
-import React, { ReactNode, useState, useEffect } from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
+
+import ieeeWhite from "@/images/logos/ieee_white.png";
 
 //official IEEE color for 100% is 002855 https://brand-experience.ieee.org/wp-content/uploads/2020/10/IEEE_Brand_Colors_Hex_Formulas_for_Solids_and_Tints.pdf
 export default function Navbar() {
@@ -26,35 +30,35 @@ export default function Navbar() {
       isScrolled ? 'bg-black' : 'bg-[rgba(0,0,0,0.5)]'
     } text-white backdrop-blur-md`}>
       <div className="container-page py-4 flex justify-between items-center">
-        <Link to="/">
+        <Link href="/">
           <div className="flex items-center space-x-4">
-            <StaticImage
-              src="../images/logos/ieee_white.png"
+            <Image
+              src={ieeeWhite}
               alt="IEEE Logo"
-              className="max-w-[120px]"
-              loading="eager"
+              className="max-w-[120px] h-auto"
+              priority
             />
             <h1 className="text-2xl font-bold whitespace-nowrap md:block hidden">
               WPI Student Branch
             </h1>
           </div>
         </Link>
-        
+
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8 text-2xl font-medium">
-          <Link to="/about" className="hover:underline">
+          <Link href="/about" className="hover:underline">
             About
           </Link>
-          <Link to="/events" className="hover:underline">
+          <Link href="/events" className="hover:underline">
             Events
           </Link>
-          <Link to="/people" className="hover:underline">
+          <Link href="/people" className="hover:underline">
             People
           </Link>
-          <Link to="/alumni" className="hover:underline">
+          <Link href="/alumni" className="hover:underline">
             Alumni
           </Link>
-          <Link to="/games" className="hover:underline">
+          <Link href="/games" className="hover:underline">
             Games
           </Link>
           <a
@@ -84,19 +88,19 @@ export default function Navbar() {
         } md:hidden bg-[rgba(0,0,0,0.9)] backdrop-blur-md`}
       >
         <div className="container-page py-4 flex flex-col space-y-4 text-xl font-medium">
-          <Link to="/about" className="hover:underline">
+          <Link href="/about" className="hover:underline">
             About
           </Link>
-          <Link to="/events" className="hover:underline">
+          <Link href="/events" className="hover:underline">
             Events
           </Link>
-          <Link to="/people" className="hover:underline">
+          <Link href="/people" className="hover:underline">
             People
           </Link>
-          <Link to="/alumni" className="hover:underline">
+          <Link href="/alumni" className="hover:underline">
             Alumni
           </Link>
-          <Link to="/games" className="hover:underline">
+          <Link href="/games" className="hover:underline">
             Games
           </Link>
           <a

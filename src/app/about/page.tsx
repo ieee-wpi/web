@@ -1,15 +1,17 @@
 import React from "react";
-import { FaDownload } from "react-icons/fa";
-import Layout from "../components/layout";
-import Banner, { BannerType } from "../components/banner";
+import Banner, { BannerType } from "@/components/banner";
 import Description from "@/components/description";
 import ContentCard from "@/components/content-card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
+export const metadata = {
+  title: "About",
+};
+
 export default function AboutPage() {
   return (
-    <Layout>
+    <>
       <Banner type={BannerType.About} />
       <main className="container-page flex flex-col gap-14">
         <section>
@@ -55,6 +57,6 @@ export default function AboutPage() {
           </div>
         </ContentCard>
       </main>
-    </Layout>
+    </>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useCallback, useContext, useEffect } from "react";
 import Key from "./ui/key";
 import { GameContext } from "./gameContent";

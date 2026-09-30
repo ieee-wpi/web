@@ -1,15 +1,11 @@
 import React from "react";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import { StaticImage } from "gatsby-plugin-image";
-import Banner, { BannerType } from "../components/banner";
-import Layout from "../components/layout";
+import Banner, { BannerType } from "@/components/banner";
 import Description from "@/components/description";
 import FlagshipEventsCarousel from "@/components/flagship-events-carousel";
 
 export default function HomePage() {
   return (
-    <Layout>
+    <>
       <Banner type={BannerType.Home} />
       <main className="container-page flex flex-col gap-14">
           <section>
@@ -70,14 +66,6 @@ export default function HomePage() {
                 </a>
               </div>
               <div className="md:w-3/4">
-                {/* <div className="float-right ml-6 mb-4 w-1/3 flex flex-col items-center">
-                  <p className="text-lg font-bold mb-2">2024 Officer Board</p>
-                  <StaticImage
-                    src="../images/people/officer_board.png"
-                    alt="2024 Officer Board"
-                    className="rounded shadow-lg"
-                  />
-                </div> */}
                 <div className="flex flex-col gap-4">
                   <p className="text-lg leading-relaxed">
                     We have over <span className="font-bold">500</span> general members in our branch, primarily
@@ -100,6 +88,6 @@ export default function HomePage() {
             </div>
           </section>
       </main>
-    </Layout>
+    </>
   );
 }

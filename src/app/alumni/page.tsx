@@ -1,14 +1,17 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
-import Layout from "../components/layout";
-import Banner, { BannerType } from "../components/banner";
+import Banner, { BannerType } from "@/components/banner";
 import Description from "@/components/description";
 import ContentCard from "@/components/content-card";
 import { Button } from "@/components/ui/button";
 
+export const metadata = {
+  title: "Alumni",
+};
+
 export default function AlumniPage() {
   return (
-    <Layout>
+    <>
       <Banner type={BannerType.Alumni} />
       <main className="container-page flex flex-col gap-14">
         <section>
@@ -69,6 +72,6 @@ export default function AlumniPage() {
           </div>
         </ContentCard>
       </main>
-    </Layout>
+    </>
   );
 }

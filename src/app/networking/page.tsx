@@ -1,12 +1,23 @@
 import React from "react";
-import Layout from "../components/layout";
-import Banner, { BannerType } from "../components/banner";
+import Banner, { BannerType } from "@/components/banner";
+import Image from "next/image";
 import ContentCard from "@/components/content-card";
-import { StaticImage } from "gatsby-plugin-image";
+
+import amd from "@/images/networking/amd.png";
+import analog from "@/images/networking/analog.png";
+import bose from "@/images/networking/bose.png";
+import ipg from "@/images/networking/ipg.png";
+import mitll from "@/images/networking/mitll.png";
+import nvidia from "@/images/networking/nvidia.png";
+import ti from "@/images/networking/ti.png";
+
+export const metadata = {
+  title: "Networking Night",
+};
 
 export default function NetworkingPage() {
   return (
-    <Layout>
+    <>
       <Banner type={BannerType.Networking} />
       <main className="container-page flex flex-col gap-14">
         <ContentCard title="IEEE WPI Networking Night 2026">
@@ -99,32 +110,32 @@ export default function NetworkingPage() {
           <div className="space-y-8 p-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-items-center">
               <div className="w-40 md:w-40 h-24 flex items-center justify-center">
-                <StaticImage src="../images/networking/amd.png" alt="AMD" width={200} />
+                <Image src={amd} alt="AMD" className="w-[200px] h-auto" />
               </div>
               <div className="w-43 md:w-43 h-24 flex items-center justify-center">
-                <StaticImage src="../images/networking/analog.png" alt="Analog Devices" width={180} />
+                <Image src={analog} alt="Analog Devices" className="w-[180px] h-auto" />
               </div>
               <div className="w-50 md:w-50 h-24 flex items-center justify-center">
-                <StaticImage src="../images/networking/bose.png" alt="Bose" width={200} />
+                <Image src={bose} alt="Bose" className="w-[200px] h-auto" />
               </div>
               <div className="w-50 md:w-50 h-24 flex items-center justify-center">
-                <StaticImage src="../images/networking/ipg.png" alt="IPG Photonics" width={200} />
+                <Image src={ipg} alt="IPG Photonics" className="w-[200px] h-auto" />
               </div>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-20">
               <div className="w-[350px] md:w-100 h-44 flex items-center justify-center">
-                <StaticImage src="../images/networking/mitll.png" alt="MIT Lincoln Laboratory" width={300} />
+                <Image src={mitll} alt="MIT Lincoln Laboratory" className="w-[300px] h-auto" />
               </div>
               <div className="w-[250px] md:w-50 h-24 flex items-center justify-center">
-                <StaticImage src="../images/networking/nvidia.png" alt="NVIDIA" width={130} />
+                <Image src={nvidia} alt="NVIDIA" className="w-[130px] h-auto" />
               </div>
               <div className="w-[300px] md:w-65 h-24 flex items-center justify-center">
-                <StaticImage src="../images/networking/ti.png" alt="Texas Instruments" width={300} />
+                <Image src={ti} alt="Texas Instruments" className="w-[300px] h-auto" />
               </div>
             </div>
           </div>
         </ContentCard>
       </main>
-    </Layout>
+    </>
   );
 }

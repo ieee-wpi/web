@@ -1,22 +1,24 @@
 import React from "react";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import Image, { type StaticImageData } from "next/image";
 
 export interface OfficerProfileProps {
   name: string;
   position: string;
-  image: IGatsbyImageData;
+  image: StaticImageData;
 }
 
 export function OfficerProfile({ name, position, image }: OfficerProfileProps) {
   return (
     <div className="flex flex-col items-center">
       <div className="mb-4">
-        <GatsbyImage
-          image={image}
+        <Image
+          src={image}
           alt={name}
-          className="rounded-full shadow-lg w-full h-full"
-          imgClassName="rounded-full"
-          objectFit="cover"
+          width={150}
+          height={150}
+          placeholder="blur"
+          className="rounded-full shadow-lg object-cover"
+          style={{ width: 150, height: 150 }}
         />
       </div>
       <h3 className="text-xl font-bold">{name}</h3>

@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import Link from "next/link";
+import Image from "next/image";
 import { FaInstagram, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+
+import ieeeBlack from "@/images/logos/ieee_black.png";
 
 //official IEEE color for 100% is 002855 https://brand-experience.ieee.org/wp-content/uploads/2020/10/IEEE_Brand_Colors_Hex_Formulas_for_Solids_and_Tints.pdf
 export default function Footer() {
@@ -12,11 +14,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center text-center md:text-left">
           {/* Logo and Contact Info */}
           <div className="flex flex-col space-y-2 items-center">
-            <StaticImage
-              src="../images/logos/ieee_black.png"
+            <Image
+              src={ieeeBlack}
               alt="IEEE Logo"
-              className="w-32 mb-2"
-              loading="eager"
+              className="w-32 h-auto mb-2"
+              priority
             />
             <p>IEEE WPI Student Branch</p>
             <p>100 Institute Rd.</p>
@@ -33,16 +35,16 @@ export default function Footer() {
           <div className="flex flex-col space-y-2 items-center">
             <h2 className="font-bold">Pages</h2>
             <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-              <Link to="/" className="hover:text-blue-600 hover:underline">
+              <Link href="/" className="hover:text-blue-600 hover:underline">
                 Home
               </Link>
-              <Link to="/events" className="hover:text-blue-600 hover:underline">
+              <Link href="/events" className="hover:text-blue-600 hover:underline">
                 Events
               </Link>
-              <Link to="/about" className="hover:text-blue-600 hover:underline">
+              <Link href="/about" className="hover:text-blue-600 hover:underline">
                 About
               </Link>
-              <Link to="/people" className="hover:text-blue-600 hover:underline">
+              <Link href="/people" className="hover:text-blue-600 hover:underline">
                 People
               </Link>
               <a
@@ -61,7 +63,7 @@ export default function Footer() {
               >
                 IEEE
               </a>
-              <Link to="/alumni" className="hover:text-blue-600 hover:underline">
+              <Link href="/alumni" className="hover:text-blue-600 hover:underline">
                 Alumni
               </Link>
               <a

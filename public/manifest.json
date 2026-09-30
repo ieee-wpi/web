@@ -1,0 +1,15 @@
+{
+  "name": "IEEE WPI Student Branch",
+  "short_name": "WPI IEEE",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#002855",
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

@@ -2,6 +2,11 @@
 .vscode/
 .idea/
 node_modules/
-.cache/
-src/gatsby-types.d.ts
-public/*
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# misc
+*.tsbuildinfo

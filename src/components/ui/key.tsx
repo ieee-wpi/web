@@ -1,3 +1,5 @@
+"use client";
+
 import { Delete } from "lucide-react";
 import React, { useContext } from "react";
 import { GameContext, GameContextType } from "../gameContent";

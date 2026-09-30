@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { boardBlank } from "./gameFunctions";
 import LetterBox from "./letterBox";

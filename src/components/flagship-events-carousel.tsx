@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import EventCard, { EventType } from "./event-card";
 import {
@@ -34,8 +36,8 @@ export default function FlagshipEventsCarousel({ className = "" }: FlagshipEvent
       >
         <div className="overflow-hidden">
           <CarouselContent className="-ml-4">
-            {events.map((type) => (
-              <CarouselItem key={type} className="pt-4 pb-8 basis-full md:basis-1/2 lg:basis-1/3">
+            {events.map((type, index) => (
+              <CarouselItem key={`${type}-${index}`} className="pt-4 pb-8 basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="flex justify-center">
                   <EventCard type={type} />
                 </div>
