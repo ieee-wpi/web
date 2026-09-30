@@ -1,14 +1,19 @@
 import React from "react";
 import Link from "next/link";
 import Banner, { BannerType } from "@/components/banner";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export const metadata = {
   title: "Not found",
 };
 
+// Unmatched URLs render under the root layout, outside the (site) group,
+// so this page brings its own chrome.
 export default function NotFound() {
   return (
     <>
+      <Navbar />
       <Banner type={BannerType.NotFound} />
       <main className="container-page flex-1 min-h-[calc(100vh-550px)]">
         <p className="text-xl h-full flex flex-col justify-center">
@@ -17,6 +22,7 @@ export default function NotFound() {
           <Link href="/" className="text-blue-600 hover:underline">Return home</Link>
         </p>
       </main>
+      <Footer />
     </>
   );
 }

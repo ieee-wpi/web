@@ -109,3 +109,16 @@ body, html {
     @apply bg-background text-foreground;
   }
 }
+/* Live quiz podium confetti */
+@keyframes quiz-confetti-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0.7; }
+}
+.quiz-confetti {
+  animation-name: quiz-confetti-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .quiz-confetti { display: none; }
+}

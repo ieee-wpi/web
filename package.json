@@ -12,8 +12,14 @@
     "build": "next build",
     "start": "next start -p 9000",
     "clean": "rimraf .next",
-    "typecheck": "tsc --noEmit",
-    "deploy": "next build && next start -p 9000"
+    "typecheck": "tsc --noEmit && tsc --noEmit -p game-server",
+    "deploy": "next build && next start -p 9000",
+    "quiz:build": "tsc -p game-server",
+    "quiz:server": "npm run quiz:build && node --max-old-space-size=96 game-server/dist/index.js",
+    "quiz:dev": "tsc -p game-server && node --watch game-server/dist/index.js",
+    "quiz:test": "npm run quiz:build && node --test game-server/dist/*.test.js",
+    "quiz:bots": "node game-server/dist/scripts/bots.js",
+    "quiz:watch": "tsc -p game-server --watch --preserveWatchOutput"
   },
   "dependencies": {
     "@radix-ui/react-separator": "^1.1.1",
@@ -26,17 +32,22 @@
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.468.0",
     "next": "^16.3.7",
+    "obscenity": "^0.4.6",
+    "qrcode": "^1.5.4",
     "react": "^18.3.1",
     "react-big-calendar": "^1.20.0",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
-    "tailwind-merge": "^2.5.5"
+    "tailwind-merge": "^2.5.5",
+    "ws": "^8.22.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^18.3.12",
     "@types/react-big-calendar": "^1.16.0",
     "@types/react-dom": "^18.3.1",
+    "@types/ws": "^8.18.2",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "rimraf": "^6.0.1",

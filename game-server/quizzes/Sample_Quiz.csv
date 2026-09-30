@@ -1,0 +1,7 @@
+type,question,image,time,points,a1,a2,a3,a4,correct
+# Rows starting with # are ignored. Answer numbers in "correct" are 1-based; list several (e.g. 2,4) if more than one is right.
+quiz,What does IEEE stand for?,,20,standard,Institute of Electrical and Electronics Engineers,International Electronics Engineering Exchange,Institute of Electronic and Electric Engineers,Institute of Engineering and Electrical Excellence,1
+tf,"Ohm's law is V = IR",,10,standard,,,,,true
+quiz,Which of these are passive components?,,20,double,Transistor,Resistor,Op-amp,Capacitor,"2,4"
+quiz,What is the SI unit of capacitance?,,10,standard,Henry,Farad,Tesla,Weber,2
+tf,"WPI's mascot is Gompei the goat",,10,standard,,,,,true

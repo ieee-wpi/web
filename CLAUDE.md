@@ -15,10 +15,18 @@ npm run dev         # next dev -> localhost:3000
 npm run build       # next build
 npm start           # next start -p 9000 (the port production proxies to)
 npm run clean       # remove .next/
-npm run typecheck   # tsc --noEmit
+npm run typecheck   # tsc --noEmit for the site, then for game-server/
+
+npm run quiz:dev    # build + run the quiz game server on :9001 (node --watch)
+npm run quiz:watch  # tsc --watch for game-server/ (run beside quiz:dev)
+npm run quiz:test   # node:test unit tests in game-server/*.test.ts
+npm run quiz:bots -- --password <pw> --n 150   # load test: bot host + N bot players
+npm run quiz:server # production: build + run on :9001 (what deploy.sh starts)
 ```
 
-`npm run typecheck` is the only static check — there is no test suite and no linter. It currently passes clean.
+`npm run typecheck` is the static check for the site; there is no linter. The only tests are the quiz server's `quiz:test`. Both currently pass clean.
+
+Node >= 20.9 is required (Next 16's `engines`). The production VM runs Node 22 via nvm in the `dev` user's home (no sudo).
 
 `next-env.d.ts` is generated on first build and is gitignored; it supplies the module declarations for image imports. **In a fresh clone, before the first `next build`, typecheck reports ~29 "Cannot find module '@/images/...'" errors.** Run a build first — those are not real errors.
 
@@ -26,7 +34,7 @@ Next also rewrites `tsconfig.json` during a build (setting `jsx: react-jsx` and 
 
 ## Deployment
 
-Self-hosted, not a CI/CD platform. `./deploy.sh` kills the tmux server and runs `npm run deploy` (`next build && next start -p 9000`) inside a tmux session named `prod`. Apache (`apache/000-default.conf`, installed at `/etc/apache2`) terminates TLS and reverse-proxies to that process; when it is down Apache serves `maintenance/maintenance.html` (deployed to `/var/www/maintenance`) as the 503 document. Dev host is `ieee-dev.wpi.edu`.
+Self-hosted, not a CI/CD platform. `./deploy.sh` kills only the tmux session `prod` and reruns `npm run deploy` (`next build && next start -p 9000`) in it. It also starts the quiz game server in a separate tmux session `quiz` if that isn't running, and never restarts it, so a site deploy can't kill a live game. `./deploy-quiz.sh` restarts the quiz server (asks first; ends live games). Apache (`apache/000-default.conf`, installed at `/etc/apache2`) terminates TLS and reverse-proxies to that process; when it is down Apache serves `maintenance/maintenance.html` (deployed to `/var/www/maintenance`) as the 503 document. Dev host is `ieee-dev.wpi.edu`.
 
 The Node process on :9000 is what serves optimized images, so **don't switch to `output: 'export'`** without first deciding how to replace `next/image` optimization — a 1.9 MB hero JPEG currently ships as a ~75 KB WebP because of it.
 
@@ -36,7 +44,7 @@ The Node process on :9000 is what serves optimized images, so **don't switch to 
 
 ### Page shape
 
-`src/app/` with the App Router: one `page.tsx` per route. `src/app/layout.tsx` is the root layout — it owns `<html>`/`<body>` and renders `<Navbar />` / `<Footer />` around every page, so pages themselves return only a fragment:
+`src/app/` with the App Router: one `page.tsx` per route. `src/app/layout.tsx` is the root layout and owns only `<html>`/`<body>`, global CSS and site metadata. Regular pages live in the `src/app/(site)/` route group, whose `layout.tsx` renders `<Navbar />` / `<Footer />`; the group doesn't appear in URLs. **Add new site pages under `(site)/`.** `src/app/quiz/` sits outside the group so the game screens are full-screen, and `src/app/not-found.tsx` (root level, for unmatched URLs) renders its own Navbar/Footer. Pages return only a fragment:
 
 ```tsx
 export const metadata = { title: "About" };   // renders as "About | IEEE WPI Student Branch"
@@ -59,10 +67,11 @@ The title template and site-wide metadata live in the root layout's `metadata` e
 
 Most pages are server components. A page needing hooks keeps its `metadata` export by staying a server component and delegating the interactive part to a `"use client"` child — that is why `events` and `games` are thin wrappers:
 
-- `app/events/page.tsx` -> `components/events-calendar.tsx` (the fetch + `react-big-calendar`)
-- `app/games/page.tsx` -> `components/wordle.tsx` (all game state)
+- `app/(site)/events/page.tsx` -> `components/events-calendar.tsx` (the fetch + `react-big-calendar`)
+- `app/(site)/games/page.tsx` -> `components/wordle.tsx` (all game state)
+- `app/quiz/page.tsx` -> `components/quiz/player.tsx`; `app/quiz/host/page.tsx` -> `components/quiz/host.tsx`
 
-Components currently marked `"use client"`: `navbar`, `past-officers`, `flagship-events-carousel`, `ui/carousel`, `ui/key`, `keyboard`, `letterBox`, `wordleGame`, `gameContent`, `events-calendar`, `wordle`. Adding a hook, an event handler, or a context to any other component means adding the directive too.
+Components currently marked `"use client"`: `navbar`, `past-officers`, `flagship-events-carousel`, `ui/carousel`, `ui/key`, `keyboard`, `letterBox`, `wordleGame`, `gameContent`, `events-calendar`, `wordle`, `quiz/player`, `quiz/host`, `quiz/host-screens`, `quiz/countdown`, plus the hooks in `lib/quiz/use-quiz-socket.ts`. Adding a hook, an event handler, or a context to any other component means adding the directive too.
 
 ### Adding a page with a hero
 
@@ -74,7 +83,7 @@ Components currently marked `"use client"`: `navbar`, `past-officers`, `flagship
 
 Most "content edits" are edits to a literal array:
 
-- `src/app/people/page.tsx` -> `officers` (current board)
+- `src/app/(site)/people/page.tsx` -> `officers` (current board)
 - `src/components/past-officers.tsx` -> `officerBoards` (year-by-year archive)
 - `src/components/event-card.tsx` -> `eventData`, keyed by the `EventType` union; `flagship-events.tsx` picks which keys to render
 
@@ -82,12 +91,12 @@ Most "content edits" are edits to a literal array:
 
 Every image is a **static import** from `src/images/`, passed to `next/image`. Static imports give Next the intrinsic dimensions and let `placeholder="blur"` generate a blur data URL at build time.
 
-Adding an officer = drop the photo in `src/images/people/`, import it at the top of `app/people/page.tsx`, and add a row to `officers`. A missing or misnamed file is a build error. (Under Gatsby this was a GraphQL glob joined by filename, where a typo silently produced a blank circle.)
+Adding an officer = drop the photo in `src/images/people/`, import it at the top of `app/(site)/people/page.tsx`, and add a row to `officers`. A missing or misnamed file is a build error. (Under Gatsby this was a GraphQL glob joined by filename, where a typo silently produced a blank circle.)
 
 Two conventions worth matching:
 
 - Full-bleed images (heroes, in `banner.tsx`) use `fill` + `className="object-cover"` inside a `relative` parent.
-- Fixed-width images (sponsor logos in `app/networking/page.tsx`) use `className="w-[200px] h-auto"` rather than `width`/`height` props, so intrinsic dimensions still come from the import.
+- Fixed-width images (sponsor logos in `app/(site)/networking/page.tsx`) use `className="w-[200px] h-auto"` rather than `width`/`height` props, so intrinsic dimensions still come from the import.
 
 ### Events calendar
 
@@ -114,3 +123,24 @@ shadcn/ui, configured via `components.json` (default style, `neutral` base, CSS 
 Tailwind is v3. `@/*` -> `./src/*` resolves natively through `tsconfig.json`; no webpack config is involved.
 
 Brand color is IEEE navy `#002855`.
+
+### Live quiz (`/quiz`, `/quiz/host`, `game-server/`)
+
+A Kahoot-style game. Design and rationale: `docs/quiz-game-plan.md`. Officer-facing instructions: `docs/quiz-runbook.md`.
+
+- **`game-server/`** is a separate plain Node + `ws` process on :9001, not part of Next. It's compiled with its own `tsconfig.json` to `game-server/dist/` (gitignored); the root tsconfig excludes it. It holds all game state in memory, keeps the answer key, measures answer times, and scores. Config is in `game-server/.env` (gitignored; see `.env.example`). The host password is `QUIZ_HOST_PASSWORD`.
+- **Apache** proxies `/quiz-ws/` to :9001 (`upgrade=websocket`), so production pages connect to `wss://<host>/quiz-ws/`. In dev, `.env.local` sets `NEXT_PUBLIC_QUIZ_WS_URL=ws://localhost:9001`, because Next dev doesn't proxy WebSockets.
+- **Protocol:** `game-server/protocol.ts` is the single source of message types. The front end imports it with `import type` only. Phones never receive question or answer text, only "question N, K choices, T ms left".
+- **Quizzes** come from a published Google Sheet (an Index tab listing title/gid, one tab per quiz; `QUIZ_SHEET_PUB_BASE`) and from `game-server/quizzes/*.csv` (same columns). Use a **different** spreadsheet from Wordle's, whose URL is public in the client bundle.
+- **Results** are written to `game-server/results/` (gitignored) as JSON and CSV at the podium. They're downloadable from the host screen.
+- **Sound** is host-only. Effects are synthesized with Web Audio. Optional music loops go in `public/quiz/sfx/` (CC0 only; record sources in `CREDITS.md` there).
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

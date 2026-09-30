@@ -7,6 +7,12 @@ node_modules/
 .next/
 out/
 next-env.d.ts
+.env*.local
 
 # misc
 *.tsbuildinfo
+
+# Quiz game server
+game-server/dist/
+game-server/results/
+game-server/.env

@@ -1,7 +1,5 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import "@/styles/global.css";
 
 export const metadata: Metadata = {
@@ -27,11 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

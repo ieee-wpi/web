@@ -2,11 +2,20 @@
 
 SESSION_NAME="prod"
 DEPLOY_CMD="npm run deploy"
+QUIZ_SESSION="quiz"
+QUIZ_CMD="npm run quiz:server"
 WEBSITE_URL="https://ieee-dev.wpi.edu"
 
-# Kill tmux sessions (proceed even if command fails)
-tmux kill-server || true
+# Restart only the site. The quiz game server runs in its own tmux session so
+# a site deploy never kills a live game; use ./deploy-quiz.sh to restart it.
+tmux kill-session -t "$SESSION_NAME" 2>/dev/null || true
 echo ">> Server killed"
+
+# Start the quiz server if it isn't already running.
+if ! tmux has-session -t "$QUIZ_SESSION" 2>/dev/null; then
+  tmux new -d -s "$QUIZ_SESSION" "$QUIZ_CMD"
+  echo ">> Quiz server started in tmux session $QUIZ_SESSION."
+fi
 
 # Start a new tmux session and run the command inside it
 tmux new -s "$SESSION_NAME" "$DEPLOY_CMD"

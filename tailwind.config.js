@@ -50,6 +50,12 @@ module.exports = {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
+  			quiz: {
+  				red: '#E21B3C',
+  				blue: '#1368CE',
+  				yellow: '#D89E00',
+  				green: '#26890C'
+  			},
   			chart: {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
