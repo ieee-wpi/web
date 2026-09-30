@@ -1,0 +1,13 @@
+type,question,image,time,points,a1,a2,a3,a4,correct
+quiz,What does IEEE stand for?,,20,standard,Institute of Electrical and Electronics Engineers,International Electronics Engineering Exchange,Institute of Electronic and Electric Engineers,Institute of Engineering and Electrical Excellence,1
+tf,Ohm's law is V = IR,,10,standard,,,,,true
+quiz,What is the SI unit of capacitance?,,10,standard,Henry,Farad,Tesla,Weber,2
+quiz,Which of these are passive components?,,20,double,Transistor,Resistor,Op-amp,Capacitor,2;4
+quiz,What year was WPI founded?,,20,standard,1865,1901,1837,1889,1
+tf,WPI's mascot is Gompei the goat,,10,standard,,,,,true
+quiz,The SI unit of magnetic flux density is named after which scientist?,,20,standard,Weber,Tesla,Gauss,Henry,2
+quiz,How many bits are in a byte?,,10,standard,4,8,16,32,2
+tf,Light travels faster in glass than in a vacuum,,10,standard,,,,,false
+quiz,Which logic gate outputs 1 only when all of its inputs are 1?,,20,standard,OR,XOR,AND,NAND,3
+quiz,What does LED stand for?,,10,standard,Light-Emitting Diode,Low-Energy Device,Linear Electric Driver,Light-Enhancing Display,1
+tf,IEEE was formed in 1963 by merging the AIEE and the IRE,,20,double,,,,,true

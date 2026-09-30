@@ -54,6 +54,22 @@ On the first deploy, run `chmod +x deploy-quiz.sh` if git didn't keep the execut
 
 ---
 
+## Build a quiz on the site
+
+The easiest way to make a quiz. No spreadsheet needed.
+
+1. Open the host screen and enter the host password.
+2. Click **New quiz**. To start from an existing Sheet or local quiz, click its copy icon instead, which puts an editable copy in the builder.
+3. Give the quiz a title, then fill in each question: the text, the time limit, points, an optional image URL, and the answers. Tick the check mark on every correct answer (any ticked answer scores).
+4. Problems show up under the question as you type, and questions with problems get a red dot in the list. **Save** works even with problems, so you can finish later. **Save & host** needs a clean quiz and takes you back to the quiz list with it selected. Then click **Create game** as usual.
+
+Quizzes built here show as **Built here** in the list, with **Edit** (pencil) and **Delete** (bin) buttons. Sheet and local quizzes can't be edited on the site; copy them instead.
+
+- Unsaved work is kept in this browser, and the builder offers to restore it if the tab closes.
+- If two officers save the same quiz, the second one is asked whether to overwrite or load the other version.
+- Editing a quiz doesn't affect a game that's already running it.
+- Files live on the VM in `game-server/saved-quizzes/` (not in git). Each save keeps the previous version as `<name>.csv.bak`, and deleted quizzes go to `saved-quizzes/.trash/`, where the webmaster can recover them.
+
 ## Quiz spreadsheet
 
 Use a **new** Google Sheet, not the Wordle one. The Wordle sheet's link is visible to anyone who views the site's source.

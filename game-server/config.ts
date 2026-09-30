@@ -47,6 +47,8 @@ export const config = {
   maxPlayers: int("QUIZ_MAX_PLAYERS", 200),
   resultsDir: path.resolve(ROOT, process.env.QUIZ_RESULTS_DIR ?? "results"),
   quizzesDir: path.resolve(ROOT, process.env.QUIZ_LOCAL_DIR ?? "quizzes"),
+  // Quizzes made in the builder on /quiz/host (gitignored, unlike quizzes/).
+  savedDir: path.resolve(ROOT, process.env.QUIZ_SAVED_DIR ?? "saved-quizzes"),
   allowedOrigins: (process.env.QUIZ_ALLOWED_ORIGINS ?? "https://ieee.wpi.edu,https://ieee-dev.wpi.edu,http://localhost:3000")
     .split(",")
     .map((s) => s.trim())

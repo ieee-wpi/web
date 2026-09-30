@@ -71,7 +71,7 @@ Most pages are server components. A page needing hooks keeps its `metadata` expo
 - `app/(site)/games/page.tsx` -> `components/wordle.tsx` (all game state)
 - `app/quiz/page.tsx` -> `components/quiz/player.tsx`; `app/quiz/host/page.tsx` -> `components/quiz/host.tsx`
 
-Components currently marked `"use client"`: `navbar`, `past-officers`, `flagship-events-carousel`, `ui/carousel`, `ui/key`, `keyboard`, `letterBox`, `wordleGame`, `gameContent`, `events-calendar`, `wordle`, `quiz/player`, `quiz/host`, `quiz/host-screens`, `quiz/countdown`, plus the hooks in `lib/quiz/use-quiz-socket.ts`. Adding a hook, an event handler, or a context to any other component means adding the directive too.
+Components currently marked `"use client"`: `navbar`, `past-officers`, `flagship-events-carousel`, `ui/carousel`, `ui/key`, `keyboard`, `letterBox`, `wordleGame`, `gameContent`, `events-calendar`, `wordle`, `quiz/player`, `quiz/host`, `quiz/host-screens`, `quiz/countdown`, `quiz/builder`, `quiz/question-editor`, plus the hooks in `lib/quiz/use-quiz-socket.ts`. Adding a hook, an event handler, or a context to any other component means adding the directive too.
 
 ### Adding a page with a hero
 
@@ -132,6 +132,7 @@ A Kahoot-style game. Design and rationale: `docs/quiz-game-plan.md`. Officer-fac
 - **Apache** proxies `/quiz-ws/` to :9001 (`upgrade=websocket`), so production pages connect to `wss://<host>/quiz-ws/`. In dev, `.env.local` sets `NEXT_PUBLIC_QUIZ_WS_URL=ws://localhost:9001`, because Next dev doesn't proxy WebSockets.
 - **Protocol:** `game-server/protocol.ts` is the single source of message types. The front end imports it with `import type` only. Phones never receive question or answer text, only "question N, K choices, T ms left".
 - **Quizzes** come from a published Google Sheet (an Index tab listing title/gid, one tab per quiz; `QUIZ_SHEET_PUB_BASE`) and from `game-server/quizzes/*.csv` (same columns). Use a **different** spreadsheet from Wordle's, whose URL is public in the client bundle.
+- **Quiz builder** (`components/quiz/builder.tsx`, `question-editor.tsx`, opened from the host's quiz list) creates, edits and deletes quizzes saved as CSVs in `game-server/saved-quizzes/` (gitignored; `QUIZ_SAVED_DIR`; ids `saved:<slug>`). It talks to the game server over HTTP JSON at `/quizzes/...` (`game-server/builder-http.ts`, `Authorization: Bearer <host password>`), not the socket, whose 1 KB message cap is far below a quiz. Drafts are converted to the same CSV format (`quiz-draft.ts`) and validated by the same `parseQuizCsv`, so there is one set of rules. Content limits live in `game-server/quiz-rules.ts`, the one game-server module the front end imports at runtime (constants only, no Node imports). Sheet and `quizzes/` quizzes are read-only in the builder and can be duplicated into it.
 - **Results** are written to `game-server/results/` (gitignored) as JSON and CSV at the podium. They're downloadable from the host screen.
 - **Sound** is host-only. Effects are synthesized with Web Audio. Optional music loops go in `public/quiz/sfx/` (CC0 only; record sources in `CREDITS.md` there).
 

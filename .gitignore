@@ -15,4 +15,5 @@ next-env.d.ts
 # Quiz game server
 game-server/dist/
 game-server/results/
+game-server/saved-quizzes/
 game-server/.env

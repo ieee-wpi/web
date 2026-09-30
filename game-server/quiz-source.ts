@@ -3,6 +3,7 @@ import path from "node:path";
 import { config } from "./config";
 import { parseCsv } from "./csv";
 import type { PointsMode, QuestionType, QuizProblem, QuizSummary } from "./protocol";
+import { MAX_ANSWER_LEN, MAX_QUESTION_LEN, MAX_QUESTIONS, TIME_OPTIONS } from "./quiz-rules";
 
 export type Question = {
   type: QuestionType;
@@ -16,20 +17,34 @@ export type Question = {
 
 export type Quiz = { id: string; title: string; questions: Question[] };
 
-export const TIME_OPTIONS = [5, 10, 20, 30, 45, 60, 90, 120, 240];
-const MAX_QUESTIONS = 100;
-const MAX_QUESTION_LEN = 120;
-const MAX_ANSWER_LEN = 75;
-const COLUMNS = ["type", "question", "image", "time", "points", "a1", "a2", "a3", "a4", "correct"] as const;
+export const COLUMNS = ["type", "question", "image", "time", "points", "a1", "a2", "a3", "a4", "correct"] as const;
 
 // ---------- parsing ----------
 
-export function parseQuizCsv(id: string, title: string, csv: string): { quiz: Quiz; problems: QuizProblem[] } {
+// Saved quizzes carry their title in a "# title: ..." row above the header,
+// since a file name can't hold punctuation.
+const TITLE_RE = /^#\s*title:\s*(.*)$/i;
+
+export function findHeader(rows: string[][]) {
+  return rows.findIndex((r) => r.some((c) => c.trim().toLowerCase() === "question"));
+}
+
+export function readTitle(rows: string[][]): string | null {
+  const end = findHeader(rows);
+  for (const r of rows.slice(0, end < 0 ? rows.length : end)) {
+    const m = TITLE_RE.exec((r[0] ?? "").trim());
+    if (m && m[1].trim()) return m[1].trim();
+  }
+  return null;
+}
+
+export function parseQuizCsv(id: string, fallbackTitle: string, csv: string): { quiz: Quiz; problems: QuizProblem[] } {
   const rows = parseCsv(csv);
+  const title = readTitle(rows) ?? fallbackTitle;
   const problems: QuizProblem[] = [];
   const questions: Question[] = [];
 
-  const headerIdx = rows.findIndex((r) => r.some((c) => c.trim().toLowerCase() === "question"));
+  const headerIdx = findHeader(rows);
   if (headerIdx < 0) {
     return { quiz: { id, title, questions }, problems: [{ row: 1, message: 'No header row with a "question" column.' }] };
   }
@@ -143,15 +158,25 @@ async function listSheetQuizzes(): Promise<(QuizSummary & { gid: string })[]> {
     .map((r) => ({ id: `sheet:${r[gi].trim()}`, gid: r[gi].trim(), title: (r[ti] ?? "").trim() || `Quiz ${r[gi]}`, source: "sheet" as const }));
 }
 
-function listLocalQuizzes(): QuizSummary[] {
-  if (!fs.existsSync(config.quizzesDir)) return [];
+const FILE_RE = /^[\w-]+\.csv$/;
+const nameToTitle = (name: string) => name.replace(/[_-]+/g, " ");
+
+function listCsvDir(dir: string, source: "local" | "saved"): QuizSummary[] {
+  if (!fs.existsSync(dir)) return [];
   return fs
-    .readdirSync(config.quizzesDir)
-    .filter((f) => /^[\w-]+\.csv$/.test(f))
+    .readdirSync(dir)
+    .filter((f) => FILE_RE.test(f))
     .map((f) => {
       const name = f.replace(/\.csv$/, "");
-      return { id: `local:${name}`, title: name.replace(/[_-]+/g, " "), source: "local" as const };
-    });
+      let title = nameToTitle(name);
+      try {
+        title = readTitle(parseCsv(fs.readFileSync(path.join(dir, f), "utf8"))) ?? title;
+      } catch {
+        // unreadable file: list it anyway; loading it will report the error
+      }
+      return { id: `${source}:${name}`, title, source };
+    })
+    .sort((a, b) => a.title.localeCompare(b.title) || a.id.localeCompare(b.id));
 }
 
 export async function listQuizzes(): Promise<QuizSummary[]> {
@@ -161,21 +186,27 @@ export async function listQuizzes(): Promise<QuizSummary[]> {
   } catch (err) {
     console.warn("[quiz] could not read sheet index:", (err as Error).message);
   }
-  return [...sheet, ...listLocalQuizzes()];
+  return [...listCsvDir(config.savedDir, "saved"), ...sheet, ...listCsvDir(config.quizzesDir, "local")];
 }
 
-export async function loadQuiz(id: string): Promise<{ quiz: Quiz; problems: QuizProblem[] }> {
-  const local = /^local:([\w-]+)$/.exec(id);
-  if (local) {
-    const file = path.join(config.quizzesDir, `${local[1]}.csv`);
-    if (!fs.existsSync(file)) throw new Error("Quiz file not found");
-    return parseQuizCsv(id, local[1].replace(/[_-]+/g, " "), fs.readFileSync(file, "utf8"));
+// The raw CSV behind a quiz id, plus the title to use if the CSV has no "# title:" row.
+export async function loadQuizSource(id: string): Promise<{ title: string; csv: string }> {
+  const file = /^(local|saved):([\w-]+)$/.exec(id);
+  if (file) {
+    const p = path.join(file[1] === "saved" ? config.savedDir : config.quizzesDir, `${file[2]}.csv`);
+    if (!fs.existsSync(p)) throw new Error("Quiz file not found");
+    return { title: nameToTitle(file[2]), csv: fs.readFileSync(p, "utf8") };
   }
   const sheet = /^sheet:(\d+)$/.exec(id);
   if (sheet && config.sheetPubBase) {
     const entry = (await listSheetQuizzes()).find((q) => q.gid === sheet[1]);
     if (!entry) throw new Error("Quiz is not listed (or not enabled) in the Index tab");
-    return parseQuizCsv(id, entry.title, await fetchSheetCsv(entry.gid));
+    return { title: entry.title, csv: await fetchSheetCsv(entry.gid) };
   }
   throw new Error("Unknown quiz");
+}
+
+export async function loadQuiz(id: string): Promise<{ quiz: Quiz; problems: QuizProblem[] }> {
+  const { title, csv } = await loadQuizSource(id);
+  return parseQuizCsv(id, title, csv);
 }

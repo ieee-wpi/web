@@ -2,6 +2,8 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import http from "node:http";
 import { WebSocket, WebSocketServer } from "ws";
+import { checkPassword, safeEqual } from "./auth";
+import { builderBadPasswordLimiter, builderLimiter, handleBuilder } from "./builder-http";
 import { config } from "./config";
 import { Game, randomToken, type Conn, type Player } from "./game";
 import type { ClientMessage, ErrorCode, ServerMessage } from "./protocol";
@@ -26,16 +28,6 @@ const passwordLimiter = new KeyedLimiter(10, 10 / 60);
 
 // ---------- helpers ----------
 
-function sha(s: string) {
-  return crypto.createHash("sha256").update(s).digest();
-}
-function safeEqual(a: string, b: string) {
-  return crypto.timingSafeEqual(sha(a), sha(b));
-}
-function checkPassword(given: unknown) {
-  return !!config.hostPassword && typeof given === "string" && safeEqual(given, config.hostPassword);
-}
-
 function newPin() {
   for (;;) {
     const pin = String(crypto.randomInt(100_000, 1_000_000));
@@ -53,16 +45,24 @@ function clientIp(req: http.IncomingMessage) {
   return remote;
 }
 
-// ---------- HTTP (health + results download) ----------
+// ---------- HTTP (health, results download, quiz builder) ----------
 
 const server = http.createServer((req, res) => {
   const url = new URL(req.url ?? "/", "http://localhost");
   // In production the site and this server share an origin through Apache;
-  // in dev the page is on :3000 and needs CORS to fetch the results list.
+  // in dev the page is on :3000 and needs CORS for results and the builder.
   const origin = req.headers.origin;
   if (origin && config.allowedOrigins.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Vary", "Origin");
+  }
+  if (req.method === "OPTIONS") {
+    res.writeHead(204, {
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+      "Access-Control-Allow-Headers": "Authorization, Content-Type",
+      "Access-Control-Max-Age": "600",
+    });
+    return res.end();
   }
   const send = (status: number, body: string, type = "text/plain; charset=utf-8") => {
     res.writeHead(status, { "Content-Type": type, "Cache-Control": "no-store" });
@@ -75,6 +75,11 @@ const server = http.createServer((req, res) => {
     return send(200, JSON.stringify({ ok: true, games: games.size, players, rssMb }), "application/json");
   }
 
+  if (url.pathname === "/quizzes" || url.pathname.startsWith("/quizzes/")) {
+    void handleBuilder(req, res, url, clientIp(req));
+    return;
+  }
+
   if (url.pathname === "/results" || url.pathname.startsWith("/results/")) {
     const ip = clientIp(req);
     const key = url.searchParams.get("key") ?? "";
@@ -85,7 +90,12 @@ const server = http.createServer((req, res) => {
       if (!passwordLimiter.take(ip)) return send(429, "Too many attempts");
       if (!checkPassword(key)) return send(403, "Forbidden");
     }
-    if (url.pathname === "/results" || url.pathname === "/results/") {
+    if (url.pathname === "/quizzes" || url.pathname.startsWith("/quizzes/")) {
+    void handleBuilder(req, res, url, clientIp(req));
+    return;
+  }
+
+  if (url.pathname === "/results" || url.pathname === "/results/") {
       return send(200, JSON.stringify(listResults()), "application/json");
     }
     const p = resultsPath(file);
@@ -326,6 +336,8 @@ setInterval(() => {
   joinLimiter.sweep();
   badPinLimiter.sweep();
   passwordLimiter.sweep();
+  builderLimiter.sweep();
+  builderBadPasswordLimiter.sweep();
 }, SWEEP_MS);
 
 server.listen(config.port, () => {

@@ -5,10 +5,18 @@ export class TokenBucket {
   constructor(private readonly capacity: number, private readonly perSecond: number) {
     this.tokens = capacity;
   }
-  take(n = 1) {
+  private refill() {
     const now = Date.now();
     this.tokens = Math.min(this.capacity, this.tokens + ((now - this.last) / 1000) * this.perSecond);
     this.last = now;
+  }
+  // Whether a take() would succeed, without spending a token.
+  peek(n = 1) {
+    this.refill();
+    return this.tokens >= n;
+  }
+  take(n = 1) {
+    this.refill();
     if (this.tokens < n) return false;
     this.tokens -= n;
     return true;
@@ -27,6 +35,11 @@ export class KeyedLimiter {
     }
     entry.seen = Date.now();
     return entry.bucket.take();
+  }
+  // True when this key's next take() would fail. Doesn't spend a token.
+  blocked(key: string) {
+    const entry = this.buckets.get(key);
+    return !!entry && !entry.bucket.peek();
   }
   sweep(maxIdleMs = 10 * 60_000) {
     const cutoff = Date.now() - maxIdleMs;

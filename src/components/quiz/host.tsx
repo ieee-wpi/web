@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Maximize, Volume2, VolumeX } from "lucide-react";
+import { Copy, Maximize, Pencil, Plus, Trash2, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { quizHttpUrl, useQuizSocket } from "@/lib/quiz/use-quiz-socket";
 import { quizSound } from "@/components/quiz/sound";
+import QuizBuilder, { type BuilderSource } from "@/components/quiz/builder";
+import { builderApi } from "@/lib/quiz/builder-api";
 import { Intro, Lobby, Podium, QuestionView, Scoreboard } from "@/components/quiz/host-screens";
 import type { ClientMessage, HostMessage, HostSettings, QuizProblem, QuizSummary, ServerMessage } from "../../../game-server/protocol";
 
@@ -19,6 +21,8 @@ type Screen =
   | Msg<"scoreboard">
   | Msg<"podium">
   | Msg<"ended">;
+
+const SOURCE_LABEL: Record<QuizSummary["source"], string> = { sheet: "Google Sheet", local: "Local file", saved: "Built here" };
 
 const PW_KEY = "quiz:hostpw";
 const SESSION_KEY = "quiz:host";
@@ -53,6 +57,9 @@ export default function Host() {
   const [busy, setBusy] = useState(false);
   const [muted, setMuted] = useState(false);
   const [soundReady, setSoundReady] = useState(false);
+  // Open while the quiz builder is showing; `source` says what it edits.
+  const [building, setBuilding] = useState<{ source: BuilderSource } | null>(null);
+  const [pendingDelete, setPendingDelete] = useState<string | null>(null);
   const playerCount = useRef(0);
 
   useEffect(() => {
@@ -165,10 +172,12 @@ export default function Host() {
     setMuted(next);
   }, []);
 
-  // Presentation clickers send arrow keys / PageDown.
+  // Presentation clickers send arrow keys / PageDown. Off in the builder,
+  // where no game is running and letters belong to the form.
   useEffect(() => {
+    if (building) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement) return;
       if (e.key === " " || e.key === "ArrowRight" || e.key === "PageDown") {
         e.preventDefault();
         advance();
@@ -178,7 +187,7 @@ export default function Host() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [advance, send, toggleMute]);
+  }, [advance, send, toggleMute, building]);
 
   // ---------- pre-game ----------
 
@@ -200,6 +209,26 @@ export default function Host() {
     setSoundReady(quizSound().unlock()); // this click is the user gesture browsers require for audio
     playerCount.current = 0;
     if (send({ t: "host:create", password, quizId: selected, settings })) setBusy(true);
+  };
+
+  const closeBuilder = (selectId?: string) => {
+    setBuilding(null);
+    send({ t: "host:listQuizzes", password });
+    if (selectId) validate(selectId);
+  };
+
+  const deleteQuiz = async (quizId: string) => {
+    setPendingDelete(null);
+    try {
+      await builderApi(password).remove(quizId);
+    } catch (e) {
+      setError((e as Error).message);
+    }
+    if (selected === quizId) {
+      setSelected(null);
+      setValidation(null);
+    }
+    send({ t: "host:listQuizzes", password });
   };
 
   const newGame = () => {
@@ -269,20 +298,54 @@ export default function Host() {
         </Panel>
       )}
 
-      {authed && !game && (
+      {authed && !game && building && <QuizBuilder password={password} source={building.source} onClose={closeBuilder} />}
+
+      {authed && !game && !building && (
         <Panel>
-          <h1 className="mb-6 text-3xl font-extrabold">Choose a quiz</h1>
+          <div className="mb-6 flex w-full max-w-2xl flex-wrap items-center justify-between gap-3">
+            <h1 className="text-3xl font-extrabold">Choose a quiz</h1>
+            <button onClick={() => setBuilding({ source: null })} className="flex items-center gap-1 rounded-md bg-white/15 px-4 py-2 font-semibold hover:bg-white/25">
+              <Plus className="h-4 w-4" /> New quiz
+            </button>
+          </div>
           <div className="w-full max-w-2xl space-y-2">
-            {quizzes.length === 0 && <p className="opacity-80">No quizzes found. Check the Index tab of the quiz spreadsheet, or add a CSV to game-server/quizzes/.</p>}
+            {quizzes.length === 0 && (
+              <p className="opacity-80">No quizzes yet. Click New quiz to build one, list one in the Index tab of the quiz spreadsheet, or add a CSV to game-server/quizzes/.</p>
+            )}
             {quizzes.map((q) => (
-              <button
-                key={q.id}
-                onClick={() => validate(q.id)}
-                className={cn("flex w-full items-center justify-between rounded-md px-4 py-3 text-left text-lg", selected === q.id ? "bg-white text-[#002855]" : "bg-white/10 hover:bg-white/20")}
-              >
-                <span className="font-semibold">{q.title}</span>
-                <span className="text-sm opacity-70">{q.source === "sheet" ? "Google Sheet" : "Local file"}</span>
-              </button>
+              <React.Fragment key={q.id}>
+                <div className={cn("flex w-full items-center gap-1 rounded-md pr-2", selected === q.id ? "bg-white text-[#002855]" : "bg-white/10 hover:bg-white/20")}>
+                  <button onClick={() => validate(q.id)} className="flex min-w-0 flex-1 items-center justify-between gap-3 px-4 py-3 text-left text-lg">
+                    <span className="truncate font-semibold">{q.title}</span>
+                    <span className="shrink-0 text-sm opacity-70">{SOURCE_LABEL[q.source]}</span>
+                  </button>
+                  {q.source === "saved" ? (
+                    <>
+                      <IconButton label="Edit" onClick={() => setBuilding({ source: { id: q.id, duplicate: false } })}>
+                        <Pencil className="h-5 w-5" />
+                      </IconButton>
+                      <IconButton label="Delete" onClick={() => setPendingDelete(q.id)}>
+                        <Trash2 className="h-5 w-5" />
+                      </IconButton>
+                    </>
+                  ) : (
+                    <IconButton label="Copy into the builder to edit" onClick={() => setBuilding({ source: { id: q.id, duplicate: true } })}>
+                      <Copy className="h-5 w-5" />
+                    </IconButton>
+                  )}
+                </div>
+                {pendingDelete === q.id && (
+                  <div className="flex flex-wrap items-center gap-3 rounded-md bg-quiz-red px-4 py-2 text-sm font-semibold">
+                    <span className="flex-1">Delete &ldquo;{q.title}&rdquo;? It can only be recovered from the server&apos;s trash folder.</span>
+                    <button onClick={() => void deleteQuiz(q.id)} className="rounded bg-white px-3 py-1 font-bold text-quiz-red">
+                      Delete
+                    </button>
+                    <button onClick={() => setPendingDelete(null)} className="rounded bg-black/20 px-3 py-1 hover:bg-black/30">
+                      Cancel
+                    </button>
+                  </div>
+                )}
+              </React.Fragment>
             ))}
           </div>
 
@@ -294,11 +357,17 @@ export default function Host() {
                 </p>
               ) : (
                 <>
-                  <p className="mb-2 font-semibold text-quiz-yellow">Fix these rows in the sheet, then click the quiz again:</p>
+                  <p className="mb-2 font-semibold text-quiz-yellow">
+                    {validation.quizId.startsWith("saved:")
+                      ? "Fix these in the builder, then click the quiz again:"
+                      : "Fix these rows in the sheet, then click the quiz again:"}
+                  </p>
                   <ul className="max-h-48 space-y-1 overflow-y-auto text-sm">
                     {validation.problems.map((p, i) => (
                       <li key={i}>
-                        Row {p.row}: {p.message}
+                        {/* Builder quizzes: row 1 is the title, row 2 the header, so question N is row N + 2. */}
+                        {!validation.quizId.startsWith("saved:") ? `Row ${p.row}: ` : p.row > 2 ? `Question ${p.row - 2}: ` : ""}
+                        {p.message}
                       </li>
                     ))}
                   </ul>

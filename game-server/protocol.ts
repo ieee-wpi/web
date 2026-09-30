@@ -7,7 +7,7 @@ export type PointsMode = "standard" | "double" | "none";
 
 export type Phase = "lobby" | "intro" | "open" | "reveal" | "scoreboard" | "podium" | "ended";
 
-export type QuizSummary = { id: string; title: string; source: "sheet" | "local" };
+export type QuizSummary = { id: string; title: string; source: "sheet" | "local" | "saved" };
 
 export type QuizProblem = { row: number; message: string };
 
@@ -93,3 +93,32 @@ export type PlayerMessage =
   | { t: "error"; code: ErrorCode; message: string };
 
 export type ServerMessage = HostMessage | PlayerMessage;
+
+// ---------- quiz builder (HTTP JSON on /quizzes, not the socket) ----------
+
+// One question as the builder edits it. `answers` always has four slots for
+// quiz questions and is ignored for tf; `correct` holds 0-based indexes
+// (tf: 0 = True, 1 = False).
+export type DraftQuestion = {
+  type: QuestionType;
+  text: string;
+  image: string;
+  time: number;
+  points: PointsMode;
+  answers: string[];
+  correct: number[];
+};
+
+export type QuizDraft = { title: string; questions: DraftQuestion[] };
+
+// `question` is a 0-based index into the draft, or null for quiz-wide problems.
+export type DraftProblem = { question: number | null; message: string };
+
+// GET /quizzes/:id. Only saved quizzes are editable; the rest can be duplicated.
+export type BuilderQuiz = QuizDraft & { id: string; editable: boolean; etag: string | null };
+
+// POST /quizzes and PUT /quizzes/:id. A PUT whose etag is stale gets 409.
+export type BuilderSaved = { id: string; etag: string; problems: DraftProblem[] };
+
+// POST /quizzes/check
+export type BuilderChecked = { problems: DraftProblem[] };
