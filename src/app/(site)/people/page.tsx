@@ -10,12 +10,12 @@ import board from "@/images/people/board.jpg";
 import mary from "@/images/people/mary.jpg";
 import brendon from "@/images/people/brendon.jpg";
 import will from "@/images/people/will.jpg";
-import dhruv from "@/images/people/dhruv.jpg";
 import awad from "@/images/people/awad.jpg";
 import ben from "@/images/people/ben.jpg";
 import shriya from "@/images/people/shriya.jpg";
 import leo from "@/images/people/leo.jpg";
 import sam from "@/images/people/sam.jpg";
+import sofia from "@/images/people/sofia.jpg";
 
 export const metadata = {
   title: "People",
@@ -28,7 +28,7 @@ const officers: OfficerProfileProps[] = [
   { name: "Mary Schwedatschenko", position: "President", image: mary },
   { name: "Brendon Peters", position: "Vice President", image: brendon },
   { name: "Will Keller", position: "Secretary", image: will },
-  { name: "Dhruv Madan", position: "Treasurer", image: dhruv },
+  { name: "Sofia Pagán", position: "Treasurer", image: sofia },
   { name: "Awad Mohamed", position: "Events Chair", image: awad },
   { name: "Ben Harkin", position: "Events Chair", image: ben },
   { name: "Shriya Sudharshan", position: "Public Relations Chair", image: shriya },
@@ -49,8 +49,7 @@ export default function PeoplePage() {
                   src={board}
                   alt="2024-2025 Officer Board"
                   placeholder="blur"
-                  sizes="(max-width: 896px) 100vw, 896px"
-                  className="w-full h-auto hover:scale-102 transition-transform duration-500"
+                  className="h-400px"
                   priority
                 />
               </div>
