@@ -6,8 +6,6 @@ import ContentCard from "@/components/content-card";
 import amd from "@/images/networking/amd.png";
 import analog from "@/images/networking/analog.png";
 import bose from "@/images/networking/bose.png";
-import ipg from "@/images/networking/ipg.png";
-import mitll from "@/images/networking/mitll.png";
 import nvidia from "@/images/networking/nvidia.png";
 import ti from "@/images/networking/ti.png";
 
@@ -20,11 +18,11 @@ export default function NetworkingPage() {
     <>
       <Banner type={BannerType.Networking} />
       <main className="container-page flex flex-col gap-14">
-        <ContentCard title="IEEE WPI Networking Night 2026">
+        <ContentCard title="IEEE WPI Networking Night 2027">
           <div className="space-y-4 mb-8">
             <div className="flex items-center space-x-4">
               <p className="font-semibold">📅 Date:</p>
-              <p>Tuesday, January 27, 2026</p>
+              <p>Tuesday, January 26, 2027</p>
             </div>
             <div className="flex items-center space-x-4">
               <p className="font-semibold">⏰ Time:</p>
@@ -108,7 +106,7 @@ export default function NetworkingPage() {
 
         <ContentCard title="Last Year's Participating Companies">
           <div className="space-y-8 p-4">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-items-center">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-20">
               <div className="w-40 md:w-40 h-24 flex items-center justify-center">
                 <Image src={amd} alt="AMD" className="w-[200px] h-auto" />
               </div>
@@ -117,14 +115,6 @@ export default function NetworkingPage() {
               </div>
               <div className="w-50 md:w-50 h-24 flex items-center justify-center">
                 <Image src={bose} alt="Bose" className="w-[200px] h-auto" />
-              </div>
-              <div className="w-50 md:w-50 h-24 flex items-center justify-center">
-                <Image src={ipg} alt="IPG Photonics" className="w-[200px] h-auto" />
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-20">
-              <div className="w-[350px] md:w-100 h-44 flex items-center justify-center">
-                <Image src={mitll} alt="MIT Lincoln Laboratory" className="w-[300px] h-auto" />
               </div>
               <div className="w-[250px] md:w-50 h-24 flex items-center justify-center">
                 <Image src={nvidia} alt="NVIDIA" className="w-[130px] h-auto" />
